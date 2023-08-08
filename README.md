@@ -10,8 +10,5 @@ This is the repository for the [Modocosm.io](https://modocosm.io) website. It is
 
 ```sh
 npm install --save-dev astro
-npx astro add vue
-npx astro add mdx
-npx astro add partytown
-npx astro add image
+npx astro add vue mdx partytown image
 ```
