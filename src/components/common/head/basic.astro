@@ -1,7 +1,16 @@
 ---
 const meta = Astro.props;
 ---
+
 <title>{meta.title}</title>
-<link rel="icon" type="image/x-icon" href={meta.favicon.url} />
-<link rel="canonical" href={meta.rootURL} />
-<meta charset="UTF-8" />
+<link rel="icon"            type="image/x-icon"     href={meta.favicon.url} />
+<link rel="canonical"       href={meta.rootURL}                             />
+<meta charset="UTF-8"                                                       />
+<meta name="theme-color"    content={meta.themeColor}                       />
+<meta name="viewport"       content="width=device-width, initial-scale=1"   />
+<meta name="description"    content={meta.description}                      />
+<meta name="keywords"       content={meta.keywords}                         />
+<meta name="author"         content={meta.author.name}                      />
+<meta name="subject"        content={meta.subject}                          />
+<meta name="copyright"      content={meta.copyright}                        />
+<meta name="Classification" content={meta.classification}                   />
