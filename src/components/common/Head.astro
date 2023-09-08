@@ -6,20 +6,47 @@ import Embed_Twitter from "./head/embed/twitter.astro";
 import Directives from "./head/directives.astro";
 import Includes from "./head/includes.astro";
 let data = {
-description: "blah",
-rootURL: "https://astrojsxcomponentslibrarydemoenvmodocosm.netlify.app",
+description: "bender",
+rootURL: "https://bender.com",
 themeColor:"#400080",
-favicon:{url: "/src/assets/favicon.ico"},
+favicon:{url: "https://media.tenor.co/images/ce203d1bd752c62caa7aab6d6c0b5dd1/raw.gif"},
 lib: {jQuery: false, fontawesome: false, ponyfill: false},
 subject: "Bender",
 author: "Bender",
 copywrite: "Bender",
 keywords: ["Bender", "Bender", "Bender"],
 classification: "Bender",
+graph: {
+    og: {
+        title: "Bender",
+        description: "Bender",
+        image: {
+            url: "https://media.tenor.co/images/ce203d1bd752c62caa7aab6d6c0b5dd1/raw.gif",
+            width: "1200",
+            height: "630",
+            alt: "Bender"
+        },
+        type: "website",
+        siteName: "Bender",
+    },
+    twitter: {
+        title: "Bender",
+        description: "Bender",
+        image: {
+            url: "https://media.tenor.co/images/ce203d1bd752c62caa7aab6d6c0b5dd1/raw.gif",
+            width: "1200",
+            height: "630",
+            alt: "Bender"
+        },
+        type: "website",
+        siteName: "Bender",
+        creator: "Bender",
+        card: "summary_large_image",
+    }
+}
 }
 data = {...data, ...Astro.props.data}
 ---
-<pre><code>{JSON.stringify(data,null,2)}</code></pre>
 <head>
     <Basic data={data}/>
     <Embed_OG data={data}/>
