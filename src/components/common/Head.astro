@@ -1,0 +1,18 @@
+---
+import Basic from "./head/basic.astro";
+import Analytics from "./head/analytics/google.astro";
+import Embed_OG from "./head/embed/og.astro";
+import Embed_Twitter from "./head/embed/twitter.astro";
+import Directives from "./head/directives.astro";
+import Includes from "./head/includes.astro";
+const meta = Astro.props;
+---
+
+<head>
+    <Basic/>
+    <Embed_OG/>
+    <Embed_Twitter/>
+    <Directives/>
+    <Includes/>
+    <Analytics/>
+</head>
