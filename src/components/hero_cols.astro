@@ -19,6 +19,10 @@ const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
     </div>
 }
 <style>
+    .buttons {
+        display:flex;
+        justify-content:flex-start;
+    }
     .mc-grid {
         display:grid;
     }
@@ -42,9 +46,9 @@ const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
  }
  .content {
     /*glassmorphism*/
-    background: rgba( 200, 100, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
+    background: rgba(70, 0, 140, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 0, 50, 0.37 );
+    backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );

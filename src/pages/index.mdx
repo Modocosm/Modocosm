@@ -12,13 +12,70 @@ import Button from "../components/button.astro";
 // <pre><code>test {JSON.stringify(data,null,2)}</code></pre>
 
 <Hero bg="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=50" bgAlt="Space Background" Index="1" type="short">
-    <Col w="1" type="Content" title="Sample Title" content="Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! For example, if you killed your grandfather, you'd cease to exist! I could if you hadn't turned on the light and shut off my stereo."/>
+    <Col w="1" type="Content" title="Sample Title" content="Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! For example, if you killed your grandfather, you'd cease to exist! I could if you hadn't turned on the light and shut off my stereo.">
+        <Button link="https://google.com/" text="Clickme"/>
+        <Button link="https://google.com/" text="Clickme"/>
+    </Col>
     {/* <Col w="1" type="Image" ImageURL="" ImageAlt="SpaceBG"/> */}
     <Col w="1" type="ImageCluster">
         <div class ="anim">
-        <img class="relative" src="https://modocosm.io/images/illustration1-07.png"/>
+        {/* <img class="relative" src="https://modocosm.io/images/illustration1-07.png"/> */}
         <img class="absolute moto" src="https://modocosm.io/images/illustration1-2-moto@2x.png"/>
         <img class="absolute ill" src="https://modocosm.io/images/illustration1-3-bg@2x.png"/>
         </div>
     </Col>
 </Hero>
+
+<div class="container">
+    <div class="inner-container">
+# header 1
+write Sample markdown here
+```jsx
+// This is a code block
+const a = 1;
+const b = 2;
+<Hero bg="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=50" bgAlt="Space Background" Index="1">
+    <Col w="1" type="Content" title="Sample Title" content="Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! For example, if you killed your grandfather, you'd cease to exist! I could if you hadn't turned on the light and shut off my stereo.">
+        <Button link="https://google.com/" text="Clickme"/>
+        <Button link="https://google.com/" text="Clickme"/>
+    </Col>
+    {/* <Col w="1" type="Image" ImageURL="" ImageAlt="SpaceBG"/> */}
+    <Col w="1" type="ImageCluster">
+        <div class ="anim">
+        {/* <img class="relative" src="https://modocosm.io/images/illustration1-07.png"/> */}
+            <img class="absolute moto" src="https://modocosm.io/images/illustration1-2-moto@2x.png"/>
+            <img class="absolute ill" src="https://modocosm.io/images/illustration1-3-bg@2x.png"/>
+        </div>
+    </Col>
+</Hero>
+```
+
+## header 2
+### header 3
+#### header 4
+##### header 5
+###### header 6
+> This is a blockquote
+> > This is a nested blockquote
+> > > This is a nested nested blockquote
+- bullet
+    - bullet
+
+| table | table | table | table |
+| ----- | ----- | ----- | ----- |
+| cell  | cell  | cell  | cell  |
+| cell  | cell  | cell  | cell  |
+| cell  | cell  | cell  | cell  |
+
+**Bold** and _Italic_ and `Code` text
+
+~~Strikethrough~~ text
+
+[Link](https://google.com/) and ![Image](https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=50)
+
+
+
+
+
+</div>
+</div>

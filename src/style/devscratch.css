@@ -4,6 +4,7 @@
 .mc-grid {
     display:grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap:64px;
 }
 
 
@@ -15,8 +16,8 @@
 }
 .absolute {
     position: absolute;
-    left:0;
-    top:20%;
+    right:0;
+    top:0%;
 }
 .anim {
     
@@ -29,7 +30,7 @@
     opacity:0.7;
 }
 .anim img.moto {
-    top:35%;
+    top:0%;
     width:30%;
     animation-delay:700ms;
     animation-duration:8s;
@@ -91,4 +92,8 @@
 
         transform: translatey(0px) rotate(15deg);
     }
+}
+
+table td, table th {
+    border:1px dashed #400080;
 }
