@@ -1,6 +1,6 @@
 ---
 import Head from '../components/common/Head.astro'
-// import Nav from '../components/common/Nav.astro'
+import Nav from '../components/common/Nav.astro'
 import Foot from '../components/common/Foot.astro'
 const data = Astro.props.content
 ---
@@ -9,7 +9,7 @@ const data = Astro.props.content
 <html lang="en">
   <Head data={data}/>
   <body class="">
-    <!-- <Nav /> -->
+    <Nav />
     <main>
       <slot />
     </main>
