@@ -4,15 +4,15 @@ import '/src/style/core.css';
 import '/src/style/base.css';
 import '/src/style/theme.css';
 import '/src/style/devscratch.css';
-const meta = Astro.props;
+const data = Astro.props.data
 ---
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-{meta.fonts.map((font) => (
+{data.fonts.map((font) => (
     <link href={font} rel="stylesheet" />
 ))}
 
-{meta.lib.jQuery && <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>}
-{meta.lib.fontawesome && <script src="https://kit.fontawesome.com/707240b3b6.js" crossorigin="anonymous"></script>}
-{meta.lib.ponyfill && <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>}
+{data.lib.jQuery && <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>}
+{data.lib.fontawesome && <script src="https://kit.fontawesome.com/707240b3b6.js" crossorigin="anonymous"></script>}
+{data.lib.ponyfill && <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>}

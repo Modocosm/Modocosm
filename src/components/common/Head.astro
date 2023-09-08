@@ -5,14 +5,26 @@ import Embed_OG from "./head/embed/og.astro";
 import Embed_Twitter from "./head/embed/twitter.astro";
 import Directives from "./head/directives.astro";
 import Includes from "./head/includes.astro";
-const meta = Astro.props;
+let data = {
+description: "blah",
+rootURL: "https://astrojsxcomponentslibrarydemoenvmodocosm.netlify.app",
+themeColor:"#400080",
+favicon:{url: "/src/assets/favicon.ico"},
+lib: {jQuery: false, fontawesome: false, ponyfill: false},
+subject: "Bender",
+author: "Bender",
+copywrite: "Bender",
+keywords: ["Bender", "Bender", "Bender"],
+classification: "Bender",
+}
+data = {...data, ...Astro.props.data}
 ---
-
+<pre><code>{JSON.stringify(data,null,2)}</code></pre>
 <head>
-    <Basic/>
-    <Embed_OG/>
-    <Embed_Twitter/>
-    <Directives/>
-    <Includes/>
-    <Analytics/>
+    <Basic data={data}/>
+    <Embed_OG data={data}/>
+    <Embed_Twitter data={data}/>
+    <Directives data={data}/>
+    <Includes data={data}/>
+    <Analytics data={data}/>
 </head>
