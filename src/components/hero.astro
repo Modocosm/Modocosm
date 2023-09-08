@@ -3,23 +3,69 @@ const {bg,bgAlt,type} = Astro.props;
 ---
 
 <div class={type + " hero"}>
-    <img src={bg} alt={bgAlt}/>
-    <slot/>
+    <img class="bg bg1" src={bg} alt={bgAlt}/>
+    <img class="bg bg2" src={bg} alt={bgAlt}/>
+    <img class="bg bg3" src={bg} alt={bgAlt}/>
+    <!-- <img class="bg bg4" src={bg} alt={bgAlt}/> -->
+    <div class ="container">
+        <div class="inner-container mc-grid">
+            <slot/>
+        </div>
+    </div>
+    
 </div>
 <style>
+    
     .hero {
         position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.5) inset;
+        padding-top:192px;
+        padding-bottom:128px;
     }
-    .hero img {
+    .hero > img.bg {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        width: 300%;
+        min-width:130%;
         height: auto;
         z-index: -1;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: wander 20s infinite ease-in-out;
+    }
+    .hero img.bg2,.hero img.bg3,.hero img.bg4 {
+        mix-blend-mode:color-burn;
+        animation-delay: 300ms;
+        opacity:50%;
+        filter: blur(1px) brightness(1.2) saturate(1.2) contrast(1.2) hue-rotate(250deg);
+    }
+    .hero img.bg3 {
+        animation-delay: 500ms;
+        opacity:40%;
+    }
+    .hero img.bg4 {
+        animation-delay: 1300ms;
+        opacity:50%;
+    }
+    @keyframes wander {
+        0% {
+            transform: translate(-50%,-50%) rotate(0deg);
+        }
+        25% {
+            transform: translate(-52%,-49%) rotate(3deg);
+        }
+        50% {
+            transform: translate(-51%,-47%) rotate(-2deg);
+        }
+        75% {
+            transform: translate(-49%,-50%) rotate(-6deg);
+        }
+        100% {
+            transform: translate(-50%,-50%) rotate(0deg);
+        }
     }
     .hero .content {
         position: relative;

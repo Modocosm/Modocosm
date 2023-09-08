@@ -3,7 +3,7 @@ const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
 ---
 
 {type == "Content" &&
-  <div class={w + " content"}>
+  <div class={"gw"+w + " content"}>
     <h2>{title}</h2>
     <div>
         {content}
@@ -12,10 +12,42 @@ const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
         <slot/>
     </div>
   </div> || type == "Image" &&
-    <div class={w+" image"}>
+    <div class={"gw"+w+" image"}>
         <img src={imageUrl} alt={imageAlt} />
+    </div>|| type == "ImageCluster" && <div class ={"gw"+w+" imageCluster"}>
+        <slot/>
     </div>
 }
 <style>
-
+    .mc-grid {
+        display:grid;
+    }
+ .gw1 {
+    grid-column: span 1;
+ }
+ .imageCluster {
+    position:relative;
+    height:30vh;
+ }
+ .content h2, .content {
+    color:#eeddff;
+    text-shadow:2px 2px 2px #000000;
+    /* clip text*/
+    
+ }
+ .content h2 {
+    text-shadow:none;
+    mix-blend-mode: luminosity;
+    filter: drop-shadow(0 1px 1px #000000);
+ }
+ .content {
+    /*glassmorphism*/
+    background: rgba( 200, 100, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 0rem 2rem;
+ }
 </style>
