@@ -129,5 +129,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 Modocosmio.code-workspace
-.astro/types.d.ts
-src/env.d.ts
