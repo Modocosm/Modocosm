@@ -1,0 +1,21 @@
+---
+const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
+---
+
+{type == "Content" &&
+  <div class={w + " content"}>
+    <h2>{title}</h2>
+    <div>
+        {content}
+    </div>
+    <div class = "buttons">
+        <slot/>
+    </div>
+  </div> || type == "Image" &&
+    <div class={w+" image"}>
+        <img src={imageUrl} alt={imageAlt} />
+    </div>
+}
+<style>
+
+</style>

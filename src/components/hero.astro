@@ -1,0 +1,8 @@
+---
+const {bg,bgAlt,type} = Astro.props;
+---
+
+<div class={type + " hero"}>
+    <img src={bg} alt={bgAlt}/>
+    <slot/>
+</div>
