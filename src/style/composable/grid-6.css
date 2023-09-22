@@ -1,162 +1,157 @@
-/*Core Grids*/
-.mc-grid, mc-grid {
-    display:grid;
-    grid-gap: var(--grid-gap);
-}
 /* Mobile First */
-.mc-grid, mc-grid[s="5"] {
+mc-grid[s="5"] {
     grid-template-columns: repeat(4, 1fr);
 }
-.mc-grid, mc-grid[s="6"] {
+mc-grid[s="6"] {
     grid-template-columns: repeat(4, 1fr);
 }
 /* Tablet Break Point 576 */
 @media (min-width: 576px) {
-    .mc-grid, mc-grid[ms="5"] {
+    mc-grid[ms="5"] {
         grid-template-columns: repeat(5, 1fr);
     } 
-    .mc-grid, mc-grid[ms="6"] {
+    mc-grid[ms="6"] {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 /* Netbook and Laptop Breakpoint 767 */
 @media (min-width: 767px) {
-    .mc-grid, mc-grid[m="5"] {
+    mc-grid[m="5"] {
         grid-template-columns: repeat(5, 1fr);
     } 
-    .mc-grid, mc-grid[m="6"] {
+    mc-grid[m="6"] {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 /* Laptop Breakpoint 1200 */
 @media (min-width: 1200px) {
-    .mc-grid, mc-grid[ml="5"] {
+    mc-grid[ml="5"] {
         grid-template-columns: repeat(5, 1fr);
     } 
-    .mc-grid, mc-grid[ml="6"] {
+    mc-grid[ml="6"] {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 /* Macbook Breakpoint 1400 */
 @media (min-width: 1400px) {
-    .mc-grid, mc-grid[l="5"] {
+    mc-grid[l="5"] {
         grid-template-columns: repeat(5, 1fr);
     } 
-    .mc-grid, mc-grid[l="6"] {
+    mc-grid[l="6"] {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 /* Hi-Def Breakpoint 1920 */
 @media (min-width: 1920px) {
-    .mc-grid, mc-grid[xl="5"] {
+    mc-grid[xl="5"] {
         grid-template-columns: repeat(5, 1fr);
     } 
-    .mc-grid, mc-grid[xl="6"] {
+    mc-grid[xl="6"] {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 
 /* Mobile First */
-mc-obj, .mc-obj[s="5"] {
+mc-obj[s="5"] {
     grid-column: span 5;
 }
-mc-obj, .mc-obj[s="6"] {
+mc-obj[s="6"] {
     grid-column: span 6;
 }
 /* Tablet Break Point 576 */
 @media (min-width: 576px) {
-    mc-obj, .mc-obj[ms="5"] {
+    mc-obj[ms="5"] {
         grid-column: span 5;
     } 
-    mc-obj, .mc-obj[ms="6"] {
+    mc-obj[ms="6"] {
         grid-column: span 6;
     }
 }
 /* Netbook and Laptop Breakpoint 767 */
 @media (min-width: 767px) {
-    mc-obj, .mc-obj[m="5"] {
+    mc-obj[m="5"] {
         grid-column: span 5;
     } 
-    mc-obj, .mc-obj[m="6"] {
+    mc-obj[m="6"] {
         grid-column: span 6;
     }
 }
 /* Laptop Breakpoint 1200 */
 @media (min-width: 1200px) {
-    mc-obj, .mc-obj[ml="5"] {
+    mc-obj[ml="5"] {
         grid-column: span 5;
     } 
-    mc-obj, .mc-obj[ml="6"] {
+    mc-obj[ml="6"] {
         grid-column: span 6;
     }
 }
 /* Macbook Breakpoint 1400 */
 @media (min-width: 1400px) {
-    mc-obj, .mc-obj[l="5"] {
+    mc-obj[l="5"] {
         grid-column: span 5;
     } 
-    mc-obj, .mc-obj[l="6"] {
+    mc-obj[l="6"] {
         grid-column: span 6;
     }
 }
 /* Hi-Def Breakpoint 1920 */
 @media (min-width: 1920px) {
-    mc-obj, .mc-obj[xl="5"] {
+    mc-obj[xl="5"] {
         grid-column: span 5;
     } 
-    mc-obj, .mc-obj[xl="6"] {
+    mc-obj[xl="6"] {
         grid-column: span 6;
     }
 }
 /* Mobile First */
-mc-obj, .mc-obj[h-s="5"] {
+mc-obj[h-s="5"] {
     grid-row: span 5;
 }
-mc-obj, .mc-obj[h-s="6"] {
+mc-obj[h-s="6"] {
     grid-row: span 6;
 }
 /* Tablet Break Point 576 */
 @media (min-width: 576px) {
-    mc-obj, .mc-obj[h-ms="5"] {
+    mc-obj[h-ms="5"] {
         grid-row: span 5;
     } 
-    mc-obj, .mc-obj[h-ms="6"] {
+    mc-obj[h-ms="6"] {
         grid-row: span 6;
     }
 }
 /* Netbook and Laptop Breakpoint 767 */
 @media (min-width: 767px) {
-    mc-obj, .mc-obj[h-m="5"] {
+    mc-obj[h-m="5"] {
         grid-row: span 5;
     } 
-    mc-obj, .mc-obj[h-m="6"] {
+    mc-obj[h-m="6"] {
         grid-row: span 6;
     }
 }
 /* Laptop Breakpoint 1200 */
 @media (min-width: 1200px) {
-    mc-obj, .mc-obj[h-ml="5"] {
+    mc-obj[h-ml="5"] {
         grid-row: span 5;
     } 
-    mc-obj, .mc-obj[h-ml="6"] {
+    mc-obj[h-ml="6"] {
         grid-row: span 6;
     }
 }
 /* Macbook Breakpoint 1400 */
 @media (min-width: 1400px) {
-    mc-obj, .mc-obj[h-l="5"] {
+    mc-obj[h-l="5"] {
         grid-row: span 5;
     } 
-    mc-obj, .mc-obj[h-l="6"] {
+    mc-obj[h-l="6"] {
         grid-row: span 6;
     }
 }
 /* Hi-Def Breakpoint 1920 */
 @media (min-width: 1920px) {
-    mc-obj, .mc-obj[h-xl="5"] {
+    mc-obj[h-xl="5"] {
         grid-row: span 5;
     } 
-    mc-obj, .mc-obj[h-xl="6"] {
+    mc-obj[h-xl="6"] {
         grid-row: span 6;
     }
 }
