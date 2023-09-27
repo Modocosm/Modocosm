@@ -61,6 +61,37 @@ const b = 2;
 </HeroCTA>
 <mc-container>
     <mc-inner-container>    
+## How you call it.
+```jsx
+<HeroCTA 
+    bg="bg2.jpg" 
+    type="cta"
+    title="Look At Me" 
+    content="I'm a CTA, Buy something" 
+    buttonLink="/" 
+    buttonText="$$$">
+</HeroCTA>
+```
+### The Code
+```jsx
+<div class={type + " hero"} style={{backgroundImage: "url("+bg+")"}} >
+    <mc-container>
+      <mc-inner-container>
+        <mc-flex class="glass">
+            <div class="content" style="flex-grow:1;">
+                <h2>{title}</h2>
+                <div>{content}</div>
+            </div>
+            <div class="button-container">
+                <a class="button" href={buttonLink}>
+                    <span>{buttonText}</span>
+                </a>
+            </div>
+            </mc-flex>
+        </mc-inner-container>
+    </mc-container>
+</div>
+```
 ## header 2
 ### header 3
 #### header 4
