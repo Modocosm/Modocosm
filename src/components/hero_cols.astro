@@ -33,6 +33,31 @@ const {type,title,content,imageUrl,imageAlt,w,h} = Astro.props;
     position:relative;
     height:30vh;
  }
+ @media(max-width:900px) {
+  .imageCluster {
+    height:44vh;
+  }
+ }
+ @media (max-width:700px) {
+  .imageCluster {
+    height:35vh;
+  }
+ }
+ @media (max-width:600px) {
+  .imageCluster {
+    height:30vh;
+  }
+ }
+ @media (max-width:500px) {
+  .imageCluster {
+    height:25vh;
+  }
+ }
+ @media (max-width:400px) {
+  .imageCluster {
+    height:20vh;
+  }
+ }
  .content h2, .content {
     color:#eeddff;
     text-shadow:2px 2px 2px #000000;
