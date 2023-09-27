@@ -119,4 +119,18 @@ const {title,content,bg,bgAlt,type,s,m,flip,buttonLink,buttonText} = Astro.props
         color:white;
         text-shadow:none;
     }
+    h2 {
+      text-align:left;
+    }
+    @media(max-width:900px) {
+      .content {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      mc-flex {
+        flex-direction: column;
+      }
+    }
 </style>
