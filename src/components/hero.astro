@@ -1,5 +1,5 @@
 ---
-const {bg,bgAlt,type} = Astro.props;
+const {bg,bgAlt,type,s,m} = Astro.props;
 ---
 <div class="night">
     <div class="shooting_star"></div>
@@ -352,16 +352,16 @@ body {
 
   </style>
 <div class={type + " hero"}>
-    <img class="bg bg1" src={bg} alt={bgAlt}/>
-    <img class="bg bg2" src={bg} alt={bgAlt}/>
-    <img class="bg bg3" src={bg} alt={bgAlt}/>
-    <!-- <img class="bg bg4" src={bg} alt={bgAlt}/> -->
-    <div class ="container">
-        <div class="inner-container mc-grid">
-            <slot/>
-        </div>
-    </div>
-    
+  <img class="bg bg1" src={bg} alt={bgAlt}/>
+  <img class="bg bg2" src={bg} alt={bgAlt}/>
+  <img class="bg bg3" src={bg} alt={bgAlt}/>
+  <mc-container>
+    <mc-inner-container>
+      <mc-grid s={s} m={m}>
+        <slot/>
+      </mc-grid>
+    </mc-inner-container>
+  </mc-container>
 </div>
 <style>
     
