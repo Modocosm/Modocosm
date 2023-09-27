@@ -1,8 +1,8 @@
 ---
 const {title,content,bg,bgAlt,type,s,m,flip,buttonLink,buttonText} = Astro.props;
 ---
-<div class={type + " hero"} >
-    <img class="bg bg1" src={bg} alt={bgAlt}/>
+<div class={type + " hero"} style={{backgroundImage: "url("+bg+")"}} >
+    <!-- <img class="bg bg1" src={bg} alt={bgAlt}/> -->
     <mc-container>
       <mc-inner-container>
         <mc-flex class="glass">
@@ -26,11 +26,15 @@ const {title,content,bg,bgAlt,type,s,m,flip,buttonLink,buttonText} = Astro.props
         position: relative;
         width: 100%;
         height: 100%;
+        min-height:200px;
         overflow: hidden;
-        box-shadow: 0 0 10px 1px rgba(0,0,0,.5) inset;
+        box-shadow: 0 0 10px 3px rgba(0,0,0,1) inset;
         padding-top:64px;
         padding-bottom:64px;
-        perspective: 1px;
+        background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     }
     .parallax {
 
@@ -66,7 +70,7 @@ const {title,content,bg,bgAlt,type,s,m,flip,buttonLink,buttonText} = Astro.props
  .glass {
     /*glassmorphism*/
     background: rgba(70, 0, 140, 0.5 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 0, 50, 0.37 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 0, 50, 0.37 ), 3px 3px 6px 1px rgba( 31, 0, 50, 0.37 );
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
