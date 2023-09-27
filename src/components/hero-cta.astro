@@ -1,0 +1,87 @@
+---
+const {bg,bgAlt,type,s,m,flip} = Astro.props;
+---
+<div class={type + " hero"}>
+  <img class="bg bg1" src={bg} alt={bgAlt}/>
+    <mc-container>
+      <mc-inner-container>
+        <mc-flex>
+          <div class="content">
+            <h2>Call To action</h2>
+            <p>Some Text</p>
+          </div>
+          <slot/>
+        </mc-flex>
+        <slot/>
+      </mc-inner-container>
+    </mc-container>
+  </div>
+</div>
+
+<style>
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,.5) inset;
+        padding-top:64px;
+        padding-bottom:64px;
+    }
+    .hero > img.bg {
+        position: absolute;
+        width: auto;
+        min-width:130%;
+        height: auto;
+        min-height:120%;
+        z-index: -1;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: wander 20s infinite ease-in-out;
+    }---
+
+{type == "Content" &&
+  <div class={"gw"+w + " content"}>
+    <h2>{title}</h2>
+    <div>
+        {content}
+    </div>
+    <div class = "buttons">
+        <slot/>
+    </div>
+  </div> || type == "Image" &&
+    <div class={"gw"+w+" image"}>
+        <img src={imageUrl} alt={imageAlt} />
+    </div>|| type == "ImageCluster" && <div class ={"gw"+w+" imageCluster"}>
+        <slot/>
+    </div>
+}
+<style>
+    .buttons {
+        display:flex;
+        justify-content:flex-start;
+    }
+ .content h2, .content {
+    color:#eeddff;
+    text-shadow:2px 2px 2px #000000;
+    /* clip text*/
+    
+ }
+ .content h2 {
+    text-shadow:none;
+    mix-blend-mode: luminosity;
+    filter: drop-shadow(0 1px 1px #000000);
+ }
+ .content {
+    /*glassmorphism*/
+    background: rgba(70, 0, 140, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 0, 50, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 0rem 2rem;
+ }
+</style>
+</style>
