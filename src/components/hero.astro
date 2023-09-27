@@ -1,5 +1,5 @@
 ---
-const {bg,bgAlt,type,s,m} = Astro.props;
+const {bg,bgAlt,type,s,m,flip} = Astro.props;
 ---
 <div class="night">
     <div class="shooting_star"></div>
@@ -379,6 +379,7 @@ body {
         width: 300%;
         min-width:130%;
         height: auto;
+        min-height:120%;
         z-index: -1;
         top:50%;
         left: 50%;
@@ -398,6 +399,9 @@ body {
     .hero img.bg4 {
         animation-delay: 1300ms;
         opacity:50%;
+    }
+    @media (max-width:900px) {
+      
     }
     @keyframes wander {
         0% {

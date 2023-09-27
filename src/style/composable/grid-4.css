@@ -4,6 +4,12 @@ mc-grid {
     grid-gap: var(--grid-gap);
 }
 /* Mobile First */
+@media(max-width:900px) {
+mc-grid[s="flex"] {
+    display:flex;
+    flex-direction: column-reverse;
+}
+}
 mc-grid[s="1"] {
     grid-template-columns: repeat(1, 1fr);
 }
