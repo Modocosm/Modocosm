@@ -4,6 +4,12 @@ mc-grid {
     grid-gap: var(--grid-gap);
 }
 /* Mobile First */
+mc-flex {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 @media(max-width:900px) {
 mc-grid[s="flex"] {
     display:flex;

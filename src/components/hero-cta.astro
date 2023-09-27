@@ -1,18 +1,19 @@
 ---
-const {bg,bgAlt,type,s,m,flip} = Astro.props;
+const {title,content,bg,bgAlt,type,s,m,flip,buttonLink,buttonText} = Astro.props;
 ---
 <div class={type + " hero"}>
   <img class="bg bg1" src={bg} alt={bgAlt}/>
     <mc-container>
       <mc-inner-container>
-        <mc-flex>
-          <div class="content">
-            <h2>Call To action</h2>
-            <p>Some Text</p>
+        <mc-flex class="glass">
+          <div class="content" style="flex-grow:1;">
+            <h2>{title}</h2>
+            <div>
+                {content}
+            </div>
           </div>
-          <slot/>
+          <a href={buttonLink}><span>{buttonText}</span></a>
         </mc-flex>
-        <slot/>
       </mc-inner-container>
     </mc-container>
   </div>
@@ -40,24 +41,6 @@ const {bg,bgAlt,type,s,m,flip} = Astro.props;
         transform: translate(-50%,-50%);
         animation: wander 20s infinite ease-in-out;
     }---
-
-{type == "Content" &&
-  <div class={"gw"+w + " content"}>
-    <h2>{title}</h2>
-    <div>
-        {content}
-    </div>
-    <div class = "buttons">
-        <slot/>
-    </div>
-  </div> || type == "Image" &&
-    <div class={"gw"+w+" image"}>
-        <img src={imageUrl} alt={imageAlt} />
-    </div>|| type == "ImageCluster" && <div class ={"gw"+w+" imageCluster"}>
-        <slot/>
-    </div>
-}
-<style>
     .buttons {
         display:flex;
         justify-content:flex-start;
@@ -73,7 +56,7 @@ const {bg,bgAlt,type,s,m,flip} = Astro.props;
     mix-blend-mode: luminosity;
     filter: drop-shadow(0 1px 1px #000000);
  }
- .content {
+ .glass {
     /*glassmorphism*/
     background: rgba(70, 0, 140, 0.5 );
     box-shadow: 0 8px 32px 0 rgba( 31, 0, 50, 0.37 );
