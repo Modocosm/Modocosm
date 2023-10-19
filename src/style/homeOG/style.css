@@ -272,6 +272,18 @@ mc-accordian mc-expand.active {
 }
 /*tablets and netbooks */
 @media (min-width: 767px) {
+    mc-feature {
+        position:relative;
+        width:100%;
+        display:flex;
+    }
+    mc-feature mc-content {
+        width: 70%;
+        display: inline-block;
+    }
+    mc-feature mc-content.special {
+        width:30%;
+    }
 }
 /*netbooks and small laptops */
 @media (min-width: 992px) {
@@ -288,21 +300,6 @@ mc-accordian mc-expand.active {
     }
     mc-logo img {
         max-height:110px;
-    }
-    mc-feature mc-content {
-        width: 70%;
-        display: inline-block;
-    }
-    mc-feature mc-content.special {
-        width:30%;
-    }
-    mc-feature {
-        position:relative;
-        width:100%;
-        display:flex;
-    }
-    mc-feature img {
-        
     }
     .faq h1 {
         width:100%;
@@ -332,7 +329,7 @@ mc-hero h1 {
 }
 
 mc-content p {
-    font:16px/20px Lato, sans-serif
+    font:20px/24px Lato, sans-serif
 }
 mc-content h2 {
     font:48px/60px droid_serifbold;
@@ -342,7 +339,7 @@ mc-feature mc-content {
     margin-left:0px;
 }
 mc-features p {
-    font:16px/20px Lato, sans-serif;
+    font:20px/24px Lato, sans-serif;
     margin-top:unset;
 }
 mc-features h2 {
@@ -388,6 +385,11 @@ mc-features h2 {
     color: var(--color-primary-accent);
     text-align: center;
     margin-bottom:0px;
+    margin-top:0px;
+    padding-top:0px;
+}
+section.cta {
+    padding-bottom:32px;
 }
 #footer * {
     color:white;
@@ -477,8 +479,8 @@ mc-container {
 }
 mc-hero {
     position:relative;
-    height:60vh;
-    min-height: 100vh;
+    height:40vh;
+    min-height: 80vh;
     display: inline-block;
     width: 100%;
     overflow: hidden;
@@ -501,7 +503,7 @@ mc-hero img.float.left {
     left:15%;
     width:20%;
     max-width:20%;
-    top:30%;
+    top:20%;
     transform:rotate(15deg);
     animation-name:float3;
 }
@@ -509,11 +511,11 @@ mc-hero img.float.center {
     width:60%;
     max-width:60%;
     left:30%;
-    top:-5%;
+    top:-20%;
 }
 mc-hero img.float.right {
     right:15%;
-    top:25%;
+    top:15%;
     transform:rotate(-35deg);
     animation-name:float2;
 }
@@ -703,7 +705,7 @@ i {
         flex-direction: column;
     }
     mc-hero {
-        height:30vh;
+        height:40vh;
         min-height:unset;
     }
     mc-hero .content {
@@ -719,5 +721,35 @@ i {
     }
     mc-hero img.float.center {
         left:45%;
+    }
+    mc-content h2,mc-content p {
+        text-align: center;
+    }
+    mc-hero .content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+}
+
+
+
+
+
+@media (max-width:1400px) and (min-width:996px) {
+    mc-hero img.float.center {
+        top:-10%;
+    }
+}
+
+@media (max-width:995px) and (min-width:767px) {
+    mc-hero img.float.center {
+        top:-20%;
+        left:30%;
+    }
+    mc-hero img.float.left {
+        left:10%;
+        top:10%;
     }
 }
