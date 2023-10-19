@@ -330,7 +330,7 @@ mc-hero h1 {
 }
 
 mc-content p {
-    font:18px/22px Lato, sans-serif
+    font:18px/26px Lato, sans-serif
 }
 mc-content h2 {
     font:36px/48px droid_serifbold;
@@ -340,7 +340,7 @@ mc-feature mc-content {
     margin-left:0px;
 }
 mc-features p {
-    font:16px/20px Lato, sans-serif;
+    font:16px/24px Lato, sans-serif;
     margin-top:unset;
 }
 mc-features h2 {
