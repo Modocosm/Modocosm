@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+@font-face {
+    font-family: "droid_serifbold";
+    src: url("https://assets.codepen.io/2582751/DroidSerif-Bold-webfont.eot");
+    src: url("https://assets.codepen.io/2582751/DroidSerif-Bold-webfont.eot?#iefix")
+    format("embedded-opentype"),
+    url("https://assets.codepen.io/2582751/DroidSerif-Bold-webfont.woff")
+    format("woff"),
+    url("https://assets.codepen.io/2582751/DroidSerif-Bold-webfont.ttf")
+    format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/*CSS Variables */
+:root {
+    /* New Colors
+    --grad-color-01: linear-gradient(to right, #B896EF, #915BEE);
+    --grad-color-02: linear-gradient(to right, #1D25EE, #A1B1F2);
+    --grad-color-03: linear-gradient(to right, #B4ECF0, #67BFC6);
+    --grad-color-04: linear-gradient(to right, #141522, #181929);
+    --grad-color-05: linear-gradient(to right, #212238, #1D1E31);
+    --grad-color-06: linear-gradient(to right, #2A2B46, #1D1E31);
+    --color-01: #F9FAFC;
+    --color-02: #F9FAFC;
+    --color-03: #915BEE;
+    --color-04: #A1B1F2;
+    --color-05: #1D25EE;
+    --color-06: #B4ECF0;
+    --color-07: #67BFC6;
+    --color-08: #636488;
+    --color-09: #2A2B46;
+    --color-10: #25263E;
+    --color-11: #212238;
+    --color-12: #1D1E31;
+    --color-13: #181929;
+    --color-14: #141522; */
+    /*Sampled Colors */
+    
+    --color-primary:#6F2AE8;
+    --color-primary-muted: #b58bff;
+    --color-primary-accent: #fff;
+    --color-secondary: #1d25ee;
+    --color-secondary-muted: #a1b1f2;
+    --color-secondary-accent: #fff;
+    --color-body: #141522;
+    --color-body-muted: #444b53;
+    --color-body-accent: #fff;
+    --color-bg-alt: #eff2f8;
+    --grad-primary-01: linear-gradient(to right, var(--color-primary), #1d25ee);
+    /*Fonts*/
+    --font-head: Lato, sans-serif;
+    --font-main: Lato, sans-serif;
+    --font-h1: 38px/48px "droid_serifbold";
+    --font-h2: 26px/38px "droid_serifbold";
+    --font-h3: 20px/38px "droid_serifbold";
+    --font-h4: 18px/26px "droid_serifbold";
+    --font-h6: 48px/60px "droid_serifbold";
+    --font-b-01: 20px/38px Lato, sans-serif;
+    --font-b-02: bold 15px/26px Lato, sans-serif;
+    --btn-border: 3px solid white;
+    --btn-padding: 0px 16px;
+    --btn-bg: rgba(255, 255, 255, 1);
+    --btn-border-radius: 3px;
+    --btn-bg-hover: rgba(111, 42, 232, 1);
+    --btn-transition: 0.3s;
+    --uni-transition-short: 0.3s;
+    --uni-transition-mid: 1s;
+    --uni-transition-long: 3s;
+    /*For Kelly*/
+    --font-size-base:24px;
+    --line-height-base:36px;
+    --font-grow-base:1vw;
+    /*--font-h2: calc(var(--font-size-base) + var(--font-grow-base))/var(--line-height-base) "droid_serifbold"; */
+    /*end kelly*/
+}
+/* for css custom properties */
+/*tablets and Netbooks */
+/*netbooks and small laptops */
+@media (min-width: 992px) {
+    :root {
+        
+    }
+}
+/*Laptops and desktops*/
+@media (min-width: 1201px) {
+    :root {
+    }
+}
+/*ultrawide and 4k*/
+@media (min-width: 1921px) {
+    :root {
+    }
+}
+/* Main Presets */
+body {
+    font: var(--font-b-02);
+}
+h1 {
+    font: var(--font-h1);
+    color: var(--color-primary);
+}
+h2 {
+    font: var(--font-h2);
+    color: var(--color-primary);
+}
+h3 {
+    font: var(--font-h3);
+    font-weight: 900;
+    color: var(--color-primary);
+}
+h4 {
+    font: var(--font-h4);
+    color: var(--color-primary);
+}
+h6 {
+    font: var(--font-h6);
+    color: var(--color-primary);
+}
+p.p2 {
+    font: var(--font-b-01);
+    font-weight: 700;
+    color: black;
+}
+/*universal*/
+section:not(.nopad) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+mc-flex {
+    display: flex;
+    flex-direction: row;
+}
+mc-flex,
+.flex {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.v-center {
+    align-items: center;
+}
+.bg-alt {
+    background: var(--color-bg-alt);
+}
+/*Navbar*/
+.navigation,
+.navigation-filler {
+    height: 70px;
+    width: 100%;
+}
+.navigation {
+    background: #EDECF4;
+    position: fixed;
+    z-index: 999;
+}
+.navigation mc-container {
+    height: 100%;
+}
+mc-logo {
+    color:var(--p-dark);
+    font:var(--font-h2);
+}
+mc-logo img {
+    max-height: 50px;
+}
+.navigation mc-btn {
+    order: 2;
+    margin-left: auto;
+}
+.navigation mc-btn a,
+.cta .btn {
+    color: var(--color-primary);
+    border: var(--btn-border);
+    border-radius: var(--btn-border-radius);
+    background: var(--btn-bg);
+    padding: var(--btn-padding);
+    text-decoration: none;
+    transition: var(--btn-transition);
+}
+.navigation mc-btn a:hover,
+.cta .btn:hover {
+    background: var(--btn-bg-hover);
+    color: var(--color-bg-alt);
+	border-color:var(--color-primary)
+}
+/*CTA*/
+.cta {
+    background: var(--grad-primary-01);
+    color: var(--color-primary-accent);
+    text-align: center;
+    font: var(--font-h2);
+}
+.cta .btn {
+    margin: 20px 10px 0px;
+    display: block;
+}
+/* Features */
+mc-features svg {
+    height: 100px;
+    color: var(--color-secondary-muted);
+    fill: var(--color-secondary-muted);
+    transition: var(--uni-transition-short);
+}
+mc-features mc-col:hover svg {
+    color: var(--color-secondary);
+    fill: var(--color-secondary);
+    filter: drop-shadow(0.55em 0.55em 0.5em #acacac);
+    height: 115px;
+    margin-top: -15px;
+}
+.alt mc-features svg {
+    color: var(--color-secondary-muted);
+    fill: var(--color-secondary-muted);
+}
+.alt h2 {
+    color: var(--color-secondary);
+}
+.alt mc-features mc-col:hover svg {
+    color: var(--color-secondary);
+    fill: var(--color-secondary);
+}
+
+/*FAQ Section */
+mc-ac-btn {
+    width: 100%;
+    background-color: var(--color-primary-accent);
+    padding: 10px;
+    display: block;
+    margin: 2px 0px;
+    color: var(--color-primary);
+    font: var(--font-h2);
+    transition: var(--uni-transition-short);
+}
+mc-ac-btn:hover {
+    background-color: #c0ebe4;
+    box-shadow: 1px 1px 5px 1px var(--color-secondary);
+    animation: ease mchover 2s infinite;
+    animation-direction: alternate;
+}
+
+mc-ac-btn:last-of-type {
+    color: var(--color-secondary);
+}
+mc-ac-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-primary-accent);
+}
+mc-ac-btn.active:last-of-type {
+    background-color: var(--color-secondary);
+}
+mc-accordian mc-expand:first-child {
+    display: block;
+}
+mc-accordian mc-expand {
+    transition: 0.3s;
+    height: 0px;
+    overflow: hidden;
+    display: block;
+    padding: 5px 10px;
+}
+mc-accordian mc-expand.active {
+    height: fit-content;
+    padding: 10px 10px;
+}
+@keyframes mchover {
+    0% {
+        box-shadow: 1px 1px 20px 1px var(--color-secondary);
+    }
+    100% {
+        box-shadow: 1px 1px 5px 1px var(--color-primary);
+    }
+}
+/*tablets and netbooks */
+@media (min-width: 767px) {
+}
+/*netbooks and small laptops */
+@media (min-width: 992px) {
+    mc-container {
+        max-width: 1500px;
+        margin: auto;
+    }
+    section:not(.nopad) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .navigation, .navigation-filler {
+        
+    }
+    mc-logo img {
+        max-height:110px;
+    }
+    mc-feature mc-content {
+        width: 47%;
+        display: inline-block;
+    }
+    mc-feature {
+        position:relative;
+        width:100%;
+        display:flex;
+    }
+    mc-feature img {
+        
+    }
+    .faq h1 {
+        width:100%;
+        text-align:center
+    }
+}
+/*Laptops and desktops*/
+@media (min-width: 1201px) {
+}
+/*ultrawide and 4k*/
+@media (min-width: 1921px) {
+}
+mc-hero img {
+    min-width:100%;
+}
+mc-hero {
+    text-align:center;
+}
+mc-hero p {
+font:24px/28px "Lato, sans-serif";
+    margin-top:0px;
+    padding-top:0px;
+}
+mc-hero h1 {
+    margin-bottom:8px;
+    
+}
+
+mc-content p {
+    font:24px/48px Lato, sans-serif
+}
+mc-content h2 {
+    font:48px/60px droid_serifbold;
+}
+mc-feature mc-content {
+    margin:auto;
+    margin-left:0px;
+}
+mc-features p {
+    font:30px/48px Lato, sans-serif;
+    margin-top:unset;
+}
+mc-features h2 {
+    font:30px/48px droid_serifbold;
+    margin-bottom:8px;
+    color: #404040;
+    text-align:center;
+}
+.profile {
+    display:flex;
+}
+.profile img{
+    border-radius:10000px;
+    margin:auto;
+    max-width:400px;
+    min-width:400px;
+}
+.cta-cont {
+    display:flex;
+    flex-direction:row;
+}
+.cta-cont h1 {
+    color:white;
+}
+.cta-cont select {
+    margin:auto;
+    margin-right:0px;
+    height:fit-content;
+        color: var(--color-primary-accent);
+    border: var(--btn-border);
+    border-radius: var(--btn-border-radius);
+    background: var(--btn-bg);
+    padding: var(--btn-padding);
+    text-decoration: none;
+    transition: var(--btn-transition);
+    font:30px/48px droid_serifbold;
+}
+.cta-cont select option {
+    color:var(--color-primary);
+}
+#footer {
+    background: var(--grad-primary-01);
+    color: var(--color-primary-accent);
+    text-align: center;
+    margin-bottom:0px;
+}
+#footer * {
+    color:white;
+}
+.footer-cont {
+    display:flex;
+}
+.footer-cont p {
+    margin:auto;
+    margin-right:0px;
+    
+}
+#footer .content {
+    margin:auto;
+    margin-left:0px;
+}
+#footer h1, #footer h4 {
+    margin:0px;
+    text-align:left;
+}
+.started {
+    background: var(--grad-primary-01);
+    text-align: center;
+    width:100%;
+    font:var(--font-h3);
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    padding:8px;
+    transition:250ms;
+    border:4px solid white;
+}
+.started:hover {
+    color:black;
+    background:white;
+    border:4px solid black;
+}
+mc-hero img {
+	padding-top:5em;
+	padding-bottom:5em;
+}
+@media (max-width:767px) {
+    mc-hero img {
+        min-width:150%;
+        margin-left:-25%;
+    }
+    .cta-cont select {
+        width:100%;
+        font: 20px/28px droid_serifbold;
+    }
+    .cta-cont {
+        flex-direction:column;
+    }
+	.profile img {
+max-width:100%;
+min-width:unset;
+		}
+	mc-features p, mc-content p {
+	font: 20px/28px Lato, sans-serif;
+	}
+	mc-hero {
+overflow:hidden;
+		display:block;
+		}
+}
