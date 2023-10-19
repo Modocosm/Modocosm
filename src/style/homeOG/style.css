@@ -55,8 +55,8 @@
     --font-h3: 20px/38px "droid_serifbold";
     --font-h4: 18px/26px "droid_serifbold";
     --font-h6: 48px/60px "droid_serifbold";
-    --font-b-01: 20px/38px Lato, sans-serif;
-    --font-b-02: bold 15px/26px Lato, sans-serif;
+    --font-b-01: 16px/20px Lato, sans-serif;
+    --font-b-02: bold 16px/20px Lato, sans-serif;
     --btn-border: 3px solid white;
     --btn-padding: 0px 16px;
     --btn-bg: rgba(255, 255, 255, 1);
@@ -329,7 +329,7 @@ mc-hero h1 {
 }
 
 mc-content p {
-    font:24px/48px Lato, sans-serif
+    font:16px/20px Lato, sans-serif
 }
 mc-content h2 {
     font:48px/60px droid_serifbold;
@@ -339,7 +339,7 @@ mc-feature mc-content {
     margin-left:0px;
 }
 mc-features p {
-    font:30px/48px Lato, sans-serif;
+    font:16px/20px Lato, sans-serif;
     margin-top:unset;
 }
 mc-features h2 {
@@ -463,8 +463,8 @@ overflow:hidden;
 /* ====== */
 
 :root {
-    --float-shadow:drop-shadow(2px 2px 4px var(--color-body-muted));
-    --float-shadow-alt:drop-shadow(2px 5px 8px var(--color-body-muted));
+    --float-shadow:drop-shadow(1px 1px 3px #444b5350);
+    --float-shadow-alt:drop-shadow(2px 3px 5px #444b5320);
 }
 html,body {
     max-width:100%;
