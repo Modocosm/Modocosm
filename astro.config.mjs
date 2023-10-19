@@ -3,7 +3,7 @@ import vue from "@astrojs/vue";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 // import { createDirectus, rest, graphql } from '@directus/sdk';
-const client = createDirectus('http://directus.example.com');
+// const client = createDirectus('http://directus.example.com');
 
 // https://astro.build/config
 export default defineConfig({
