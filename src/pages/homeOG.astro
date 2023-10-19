@@ -1,5 +1,7 @@
 ---
-
+import '/src/style/homeOG/normalize.css';
+import '/src/style/homeOG/core.css';
+import '/src/style/homeOG/style.css';
 ---
 <html>
 	<head>
@@ -11,15 +13,12 @@
 		<link rel="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css">
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src = "https://kit.fontawesome.com/10c920175f.js"></script>
-		<link rel="stylesheet" href="styles/normalize.css?ver=0.0.1">
-		<link rel="stylesheet" href="styles/core.css?ver=0.0.1">
-		<link rel="stylesheet" href="styles/style.css?ver=0.0.2">
 	</head>
 	<body>
 		<section class="nopad navigation">
 			<mc-container>
 				<mc-flex class="flex v-center">
-					<mc-logo class="flex v-center">
+					<mc-logo class="flex v-center"> 
 						Modocosm
 					</mc-logo>
 					<mc-btn class="flex v-center">
@@ -31,121 +30,14 @@
 		<section class="nopad navigation-filler"></section>
 		<section class="nopad hero">
 			<style>
-				:root {
-					--float-shadow:drop-shadow(2px 2px 4px var(--color-body-muted));
-					--float-shadow-alt:drop-shadow(2px 5px 8px var(--color-body-muted));
-				}
-				html,body {
-					max-width:100%;
-				}
-				mc-container {
-					display:block;
-				}
-				mc-hero {
-					position:relative;
-					height:60vh;
-					min-height: 100vh;
-					display: inline-block;
-					width: 100%;
-					overflow: hidden;
-					padding-bottom:50px;
-				}
-				mc-hero .content {
-					position:absolute;
-					bottom:-36px;
-					width:100%;
-					text-align: Center;
-				}
-				mc-hero img.float {
-					position:absolute;
-					min-width:unset;
-					filter:var(--float-shadow);
-					animation:float 6s ease-in-out infinite;
-					animation-direction: alternate;
-				}
-				mc-hero img.float.left {
-					left:15%;
-					width:20%;
-					max-width:20%;
-					top:30%;
-					transform:rotate(15deg);
-					animation-name:float3;
-				}
-				mc-hero img.float.center {
-					width:60%;
-					max-width:60%;
-					left:30%;
-					top:-5%;
-				}
-				mc-hero img.float.right {
-					right:15%;
-					top:25%;
-					transform:rotate(-35deg);
-					animation-name:float2;
-				}
-				@keyframes float {
-					0% {
-						filter:var(--float-shadow);
-						transform: translatey(0px);
-					}
-					50% {
-						filter:var(--float-shadow-alt);
-						transform: translatey(-20px);
-					}
-					100% {
-						filter:var(--float-shadow);
-						transform: translatey(0px);
-					}
-				}
-				@keyframes float2 {
-					0% {
-						filter:var(--float-shadow);
-						transform: translatey(0px) rotate(-35deg);
-					}
-					50% {
-						filter:var(--float-shadow-alt);
-						transform: translatey(-20px) rotate(-25deg);
-					}
-					100% {
-						filter:var(--float-shadow);
-						transform: translatey(0px) rotate(-35deg);
-					}
-				}
-				@keyframes float3 {
-					0% {
-						filter:var(--float-shadow);
-						transform: translatey(0px) rotate(15deg);
-					}
-					50% {
-						filter:var(--float-shadow-alt);
-						transform: translatey(-20px) rotate(20deg);
-					}
-					100% {
-						filter:var(--float-shadow);
-						transform: translatey(0px) rotate(15deg);
-					}
-				}
-				@keyframes float4 {
-					0% {
 
-						transform: translatey(0px) rotate(15deg);
-					}
-					50% {
-
-						transform: translatey(-20px) rotate(20deg);
-					}
-					100% {
-
-						transform: translatey(0px) rotate(15deg);
-					}
-				}
 
 			</style>
 			<mc-container>
 				<mc-hero>
-					<img class = "left float" src ="images/phone 600.png">
-					<img class = "center float desktop" src="images/laptop2 1200.png" />
-					<img class = "right float" src="images/Moto@2x.png">
+					<img class = "left float" src ="phone 600.png">
+					<img class = "center float desktop" src="laptop2 1200.png" />
+					<img class = "right float" src="Moto@2x.png">
 					<div class = "content">
 						<h1>We Build Stellar Brands.</h1>
 						<p>Modocosm helps brands and business take off.</p>
@@ -155,38 +47,14 @@
 		</section>
 		<section class="feature feature-left">
 			<style>
-				.anim img {
-					animation:float4 20s ease-in-out infinite;
-				}
-				.relative {
-					position: relative;
-				}
-				.absolute {
-					position: absolute;
-					left:0;
-					top:20%;
-				}
-				.anim img.moto, img.ill {
-					animation:float 8s ease-in-out infinite;
-					filter:var(--float-shadow);
-				}
-				.anim img.ill {
-					opacity:0.7;
-				}
-				.anim img.moto {
-					top:35%;
-					width:30%;
-					animation-delay:700ms;
-					animation-duration:8s;
-					left:30%;
-				}
+
 			</style>
 			<mc-container>
 				<mc-feature>
 					<mc-content class = "relative anim">
-						<img class = "relative" src="images/illustration1-07.png" />
-						<img class = "absolute moto" src="images/illustration1-2-moto@2x.png" />
-						<img class = "absolute ill" src="images/illustration1-3-bg@2x.png" />
+						<img class = "relative" src="illustration1-07.png" />
+						<img class = "absolute moto" src="illustration1-2-moto@2x.png" />
+						<img class = "absolute ill" src="illustration1-3-bg@2x.png" />
 					</mc-content>
 					<mc-content>
 						<h2>Reach new heights.</h2>
@@ -197,22 +65,7 @@
 		</section>
 		<section class="bg-alt features center">
 			<style>
-				.center p, .center h2, .center i, .center mc-col {
-					text-align: center;
-				}
-				i {
-					font-size:128px;
-					color:#CECFDB;
-					fill:#CECFDB;
-					stroke:#CECFDB;
-					font-family: Font Awesome 6 Pro;
-				}
-				.bg-alt.features mc-col {
-					transition:150ms;
-				}
-				.bg-alt.features mc-col:hover {
-					background-color:#F5F5F9;
-				}
+
 			</style>
 			<mc-container>
 				<mc-features>
@@ -238,26 +91,7 @@
 		</section>
 		<section class="feature text-bottom">
 			<style>
-				.special {
-					position:relative;
-					margin:auto;
-					margin-bottom:-24px;
 
-				}
-				.special img {
-					animation:float 8s ease-in-out infinite;
-					filter:var(--float-shadow);
-				}
-				.moto {
-					max-width:40%;
-					left:30%;
-					top:-25%;
-					animation-delay:600ms;
-				}
-				.sparkles {
-					top:-40%;
-					animation-delay:1200ms;
-				}
 			</style>
 			<mc-container>
 				<mc-feature>
@@ -267,53 +101,16 @@
 						<p>Our leadership team is composed of three industry experts: Kelly Groglio, Marty Ellery, and William Cowen. We each offer different expertise and perspectives that when combined creates a holistic marketing strategy.  With well over a decade of industry experience and our mixed background of agency, in-house and consultancy experience you can trust we understand your marketing needs and goals. Together, with you, we can create something stellar.</p>
 					</mc-content>
 					<mc-content class = "special">
-						<img class = "relative ball" src="images/illustation2-1-planet@2x.png" />
-						<img class = "absolute moto" src="images/illustation2-2-moto@2x.png" />
-						<img class = "absolute sparkles" src="images/illustation2-3-notifications@2x.png" />
+						<img class = "relative ball" src="illustation2-1-planet@2x.png" />
+						<img class = "absolute moto" src="illustation2-2-moto@2x.png" />
+						<img class = "absolute sparkles" src="illustation2-3-notifications@2x.png" />
 					</mc-content>
 				</mc-feature>
 			</mc-container>
 		</section>
 		<section class="bg-alt features">
 			<style>
-				.profile {
-					position: relative;
-					background-color: var(--color-bg-alt);
-					perspective: 1000px;
-					width:100% !important;
-					height:auto !important;
-					aspect-ratio:1;
-					padding:15%;
-					margin-bottom:-5%;
-				}
-				.flip {
-					position: relative;
-					width: 100%;
-					height: 100%;
-					text-align: center;
-					transition: transform 0.6s;
-					transform-style: preserve-3d;
-				}
-				.profile:hover .flip {
-					transform: rotateY(180deg);
-				}
-				.profile img {
-					max-width:unset;
-					min-width:unset;
-				}
-				.profile img:nth-of-type(1),.profile img:nth-of-type(2) {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					-webkit-backface-visibility: hidden;
-					backface-visibility: hidden;
-					display:block;
-				}
-				.profile img:nth-of-type(2) {
-					transform: rotateY(180deg) translateX(0px);
-					transform-origin: center center;
-					border-radius:0px;
-				}
+
 			</style>
 			<mc-container>
 				<mc-features>
@@ -324,12 +121,12 @@
 							<p>Kelly is both a marketer and a creative. She has been working in the industry for over a decade and has led creative teams. As a marketer she believes in crafting holistic strategies and as a creative she provide leadership and direction to the production and execution process. </p>
 						</mc-col>
 						<mc-col s="12" ms="6" lg="4">
-							<div class = "profile"><div class = "flip"><img src="https://www.nelsonschmidt.com/wp-content/uploads/headshot_marty-1.jpg" /><img src ="images/Moto headshots-03.png"></div></div>
+							<div class = "profile"><div class = "flip"><img src="https://www.nelsonschmidt.com/wp-content/uploads/headshot_marty-1.jpg" /><img src ="Moto headshots-03.png"></div></div>
 							<h2>Strategic Communications</h2>
 							<p>Marty is a veteran strategic  communications professional. She has led public relation departments and has crafted brand messaging for numerous companies. Her mastery of words and communications enables her to help businesses tell their story to their target audiences.</p>
 						</mc-col>
 						<mc-col s="12" ms="6" lg="4">
-							<div class = "profile"><div class = "flip"><img src="https://windailysports.com/wp-content/uploads/2020/06/21273457_10213889004480326_8917962074572070566_o.jpg" /><img src ="images/Moto headshots-01.png"></div></div>
+							<div class = "profile"><div class = "flip"><img src="https://windailysports.com/wp-content/uploads/2020/06/21273457_10213889004480326_8917962074572070566_o.jpg" /><img src ="Moto headshots-01.png"></div></div>
 							<h2>Technology & Development</h2>
 							<p>William lives and breaths all things digital. He has led development teams for game development companies, startups, and large established businesses. As a coder and developer himself he knows how to engineer scalable technical solutions, such as: websites, digital experiences, apps, etc.</p>
 						</mc-col>
@@ -403,7 +200,7 @@
 			</mc-container>
 		</section>
 	</body>
-	<script>
+	<script type="text/javascript">
 		$("mc-ac-btn").click(function () {
 			$("mc-expand").removeClass("active");
 			$("mc-ac-btn").removeClass("active");
