@@ -352,7 +352,7 @@ mc-features h2 {
     display:flex;
 }
 .profile img{
-    border-radius:10000px;
+    /* border-radius:10000px; */
     margin:auto;
     max-width:400px;
     min-width:400px;
