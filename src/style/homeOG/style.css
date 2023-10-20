@@ -145,7 +145,7 @@ mc-flex,
 /*Navbar*/
 .navigation,
 .navigation-filler {
-    height: 70px;
+    /* height: 70px; */
     width: 100%;
 }
 .navigation {
