@@ -145,7 +145,7 @@ mc-flex,
 /*Navbar*/
 .navigation,
 .navigation-filler {
-    height: 70px;
+    /* height: 70px; */
     width: 100%;
 }
 .navigation {
@@ -328,7 +328,6 @@ mc-hero h1 {
     margin-bottom:8px;
     
 }
-
 mc-content p {
     font:18px/26px Lato, sans-serif
 }
@@ -353,7 +352,7 @@ mc-features h2 {
     display:flex;
 }
 .profile img{
-    border-radius:10000px;
+    /* border-radius:10000px; */
     margin:auto;
     max-width:400px;
     min-width:400px;
@@ -537,6 +536,7 @@ mc-hero img.float.right {
     top:40%;
     transform:rotate(-35deg);
     animation-name:float2;
+    width:72px;
 }
 @keyframes float {
     0% {
@@ -768,3 +768,14 @@ i {
     }
 }
 
+
+
+
+@media (max-width:992px) {
+    mc-hero h1 {
+        font-size:1.7em;
+    }
+    mc-content h2 {
+        font-size:1.7em;
+    }
+}
