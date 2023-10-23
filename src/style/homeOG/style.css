@@ -738,6 +738,7 @@ i {
         display:flex;
         flex-direction: column;
         aspect-ratio: 1;
+        overflow:hidden;
     }
     mc-hero {
         height:40vh;
