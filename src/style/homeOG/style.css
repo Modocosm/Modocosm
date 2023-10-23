@@ -747,9 +747,12 @@ i {
         /* bottom: unset; */
         margin:auto;
     }
+    mc-hero img {
+        padding:unset;
+    }
     mc-hero img.float.right {
         width:10%;
-        padding:unset;
+        
     }
     mc-hero img.float.left{
         left:0%;
