@@ -744,7 +744,7 @@ i {
         min-height:unset;
     }
     mc-hero .content {
-        bottom: unset;
+        /* bottom: unset; */
         margin:auto;
     }
     mc-hero img.float.right {
@@ -761,10 +761,10 @@ i {
         text-align: center;
     }
     mc-hero .content {
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
+        /* position:absolute; */
+        /* top:50%; */
+        /* left:50%; */
+        /* transform:translate(-50%,-50%); */
     }
 }
 
@@ -777,5 +777,11 @@ i {
     }
     mc-content h2 {
         font-size:1.7em;
+    }
+}
+
+@media (max-width:600px) {
+    mc-hero h1 {
+        font-size:6.3vw;
     }
 }
