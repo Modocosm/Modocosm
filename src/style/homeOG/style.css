@@ -520,7 +520,7 @@ mc-hero img.float {
     animation-direction: alternate;
 }
 mc-hero img.float.left {
-    left:0%;
+    left:10%;
     width:200px;
     top:50%;
     transform:rotate(15deg) ;
@@ -528,7 +528,7 @@ mc-hero img.float.left {
 }
 mc-hero img.float.center {
     width:600px;
-    left:50%;
+    left:60%;
     top:50%;
 }
 mc-hero img.float.right {
@@ -738,21 +738,25 @@ i {
         display:flex;
         flex-direction: column;
         aspect-ratio: 1;
+        overflow:hidden;
     }
     mc-hero {
         height:40vh;
         min-height:unset;
     }
     mc-hero .content {
-        bottom: unset;
+        /* bottom: unset; */
         margin:auto;
+    }
+    mc-hero img {
+        padding:unset;
     }
     mc-hero img.float.right {
         width:10%;
-
+        
     }
     mc-hero img.float.left{
-        left:0%;
+        left:10%;
     }
     /* mc-hero img.float.center {
         left:45%;
@@ -761,10 +765,10 @@ i {
         text-align: center;
     }
     mc-hero .content {
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
+        /* position:absolute; */
+        /* top:50%; */
+        /* left:50%; */
+        /* transform:translate(-50%,-50%); */
     }
 }
 
@@ -777,5 +781,54 @@ i {
     }
     mc-content h2 {
         font-size:1.7em;
+    }
+}
+
+@media (max-width:600px) {
+    mc-hero h1 {
+        font-size:6.3vw;
+    }
+}
+
+
+section.novacancy {
+    margin-top:32px;
+    background-color: #f3f3f3;
+    padding:32px;
+}
+section.novacancy p {
+    font-weight:100;
+}
+
+section.novacancy a {
+    padding:8px 32px;
+    background:white;
+    white-space:nowrap;
+    text-decoration: none;
+    color:var(--color-primary);
+}
+section.novacancy mc-btn {
+    margin:auto;
+    margin-left:32px;
+    display:block;
+}
+
+@media(max-width:967px) {
+    section.novacancy {
+        text-align: center;
+    }
+    section.novacancy mc-flex {
+        flex-direction:column;
+    }
+    section.novacancy mc-btn {
+        margin-left:unset;
+        width:100%;
+        margin:0;
+    }
+    section.novacancy mc-btn a {
+        width:100%;
+        margin:0;
+        display:block;
+        text-align: Center;
     }
 }
