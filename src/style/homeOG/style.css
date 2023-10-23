@@ -788,3 +788,46 @@ i {
         font-size:6.3vw;
     }
 }
+
+
+section.novacancy {
+    margin-top:32px;
+    background-color: #f3f3f3;
+    padding:32px;
+}
+section.novacancy p {
+    font-weight:100;
+}
+
+section.novacancy a {
+    padding:8px 32px;
+    background:white;
+    white-space:nowrap;
+    text-decoration: none;
+    color:var(--color-primary);
+}
+section.novacancy mc-btn {
+    margin:auto;
+    margin-left:32px;
+    display:block;
+}
+
+@media(max-width:967px) {
+    section.novacancy {
+        text-align: center;
+    }
+    section.novacancy mc-flex {
+        flex-direction:column;
+    }
+    section.novacancy mc-btn {
+        margin-left:unset;
+        width:100%;
+        margin:0;
+    }
+    section.novacancy mc-btn a {
+        width:100%;
+        margin:0;
+        display:block;
+        text-align: Center;
+    }
+}
