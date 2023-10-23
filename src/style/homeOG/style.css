@@ -520,7 +520,7 @@ mc-hero img.float {
     animation-direction: alternate;
 }
 mc-hero img.float.left {
-    left:0%;
+    left:10%;
     width:200px;
     top:50%;
     transform:rotate(15deg) ;
@@ -528,7 +528,7 @@ mc-hero img.float.left {
 }
 mc-hero img.float.center {
     width:600px;
-    left:50%;
+    left:60%;
     top:50%;
 }
 mc-hero img.float.right {
@@ -756,7 +756,7 @@ i {
         
     }
     mc-hero img.float.left{
-        left:0%;
+        left:10%;
     }
     /* mc-hero img.float.center {
         left:45%;
