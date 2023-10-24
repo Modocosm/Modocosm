@@ -1,12 +1,31 @@
 ---
+import type { GetStaticPaths } from "astro";
+import Demo from "src/layouts/demo.astro";
+import { Code } from 'astro:components';
+import { createDirectus, authentication,rest, readItems } from '@directus/sdk';
+const email = 'info@modocosm.io';
+const password = '3G@&Lx3r#GKLen4q';
+const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
+await client.login(email, password);
 export async function getStaticPaths() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const users = await res.json()
-
-  const paths = users.map(user => ({
-    params: { id: user.id.toString() },
-  }))
-
-  return { paths, fallback: false }
+    return [
+        {params: {Slug: 'test-page'}},
+    ]
 }
+// export const results = await client.request(
+//     readItems('Pages', {
+//         fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
+//     })
+// );
+// const meta = await client.request(readItems('Modocosm_Core'));
+export const content = {
+    "title": "Modocosm Demo Env", 
+    "fonts": [ "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap" ], 
+    "description": "Modocosm Demo Env", 
+    "keywords": "Modocosm, Astro, AstroJS, AtroJSX, AstroJSXComponents, AstroJSXComponentsLibrary, AstroJSXComponentsLibraryDemo, AstroJSXComponentsLibraryDemoEnv, AstroJSXComponentsLibraryDemoEnvModocosm, AstroJSXComponentsLibraryDemoEnvModocosmDemoEnv",     "author": "JugaadiTech", 
+    "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
+    "url": ""
+};
+
 ---
+asdfasdf
