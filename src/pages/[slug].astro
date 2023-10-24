@@ -6,6 +6,8 @@ export function getStaticPaths() {
     {params: {dog: 'spot'}},
   ];
 }
-
+const data = Astro.props;
 const { dog } = Astro.params;
 ---
+
+<h1>done</h1>

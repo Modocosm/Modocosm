@@ -30,7 +30,7 @@ export const content = {
             <ul>
                 {result.map((item) => (
                     <li>
-                        <a href={item.Slug}>{item.Slug}</a>
+                        <a href={"/"+item.Slug}>{item.Slug}</a>
                     </li>
                     <Code lang="json" code={JSON.stringify(item, null, 2)}/>
                 ))}
