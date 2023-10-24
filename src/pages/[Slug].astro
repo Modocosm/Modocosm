@@ -1,13 +1,12 @@
 ---
-export function getStaticPaths() {
-  return [
-    {params: {dog: 'clifford'}},
-    {params: {dog: 'rover'}},
-    {params: {dog: 'spot'}},
-  ];
-}
-const data = Astro.props;
-const { dog } = Astro.params;
----
+export async function getStaticPaths() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const users = await res.json()
 
-<h1>done</h1>
+  const paths = users.map(user => ({
+    params: { id: user.id.toString() },
+  }))
+
+  return { paths, fallback: false }
+}
+---

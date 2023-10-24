@@ -8,7 +8,7 @@ const client = createDirectus('https://modocosm.up.railway.app/').with(authentic
 await client.login(email, password);
 const result = await client.request(
     readItems('Pages', {
-        fields: ['*',{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
+        fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
     })                                                                                                                                                                             
 );
 const meta = await client.request(readItems('Modocosm_Core'));
@@ -18,8 +18,9 @@ export const content = {
     "description": "Modocosm Demo Env", 
     "keywords": "Modocosm, Astro, AstroJS, AtroJSX, AstroJSXComponents, AstroJSXComponentsLibrary, AstroJSXComponentsLibraryDemo, AstroJSXComponentsLibraryDemoEnv, AstroJSXComponentsLibraryDemoEnvModocosm, AstroJSXComponentsLibraryDemoEnvModocosmDemoEnv",     "author": "JugaadiTech", 
     "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
-    "url": "" 
+    "url": ""
 };
+export const Slug = "test-page";
 ---
 
 <Demo content={content}>
@@ -30,7 +31,7 @@ export const content = {
             <ul>
                 {result.map((item) => (
                     <li>
-                        <a href={"/"+item.Slug}>{item.Slug}</a>
+                        <a href={'/'+item.Slug}>{item.Title}</a>
                     </li>
                     <Code lang="json" code={JSON.stringify(item, null, 2)}/>
                 ))}
