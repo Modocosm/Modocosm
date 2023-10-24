@@ -1,0 +1,112 @@
+---
+title: "Modocosm Demo Env"
+layout: "/src/layouts/demo.astro"
+fonts: ["https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap"]
+description: "Modocosm Demo Env"
+keywords: "Modocosm, Astro, AstroJS, AtroJSX, AstroJSXComponents, AstroJSXComponentsLibrary, AstroJSXComponentsLibraryDemo, AstroJSXComponentsLibraryDemoEnv, AstroJSXComponentsLibraryDemoEnvModocosm, AstroJSXComponentsLibraryDemoEnvModocosmDemoEnv"
+author: "JugaadiTech"
+---
+import Hero from "../components/hero.astro";
+import Col from "../components/hero_cols.astro";
+import Button from "../components/button.astro";
+import HeroCTA from "../components/hero-cta.astro";
+import Hero001 from "../components/og/hero001.astro";
+
+<Hero001/>
+<section class="feature feature-left">
+	<mc-container>
+		<mc-feature>
+			<mc-content class = "relative anim">
+				<img class = "relative" src="illustration1-07.png" />
+				<img class = "absolute moto" src="illustration1-2-moto@2x.png" />
+				<img class = "absolute ill" src="illustration1-3-bg@2x.png" />
+			</mc-content>
+			<mc-content>
+				<h2>Reach new heights.</h2>
+				<p>We help brands and businesses solve their greatest marketing problems. Whether you need brand development, digital marketing, a custom  coded website, or content creation - we can help.</p>
+			</mc-content>
+		</mc-feature>
+	</mc-container>
+</section>
+<section class="bg-alt features center">
+	<mc-container>
+		<mc-features>
+			<mc-row col-default="3">
+				<mc-col s="12" ms="12" md="4">
+					<i class="fa-solid fa-paintbrush-pencil"></i>
+					<h2>Branding & Creative</h2>
+					<p>Tell your story to the people who mater most. Carefully crafted creative that reflects your deep understanding of your target audience's values in order to build meaningful customer connections.</p>
+				</mc-col>
+				<mc-col s="12" ms="12" md="4">
+					<i class="fa-solid fa-rectangle-ad"></i>
+					<h2>Advertising & Marketing</h2>
+					<p>Make new friends and fans through targeted outreach and inbound marketing. Sophisticated marketing strategies that deliver impact and growth. </p>
+				</mc-col>
+				<mc-col s="12" ms="12" md="4">
+					<i class="fa-solid fa-browser"></i>
+					<h2>Web Design & Development</h2>
+					<p>Professional website design and development. No templates, themes, or shortcuts taken. Each website is designed based on your brand’s guidelines, and custom coded.</p>
+				</mc-col>
+			</mc-row>
+		</mc-features>
+	</mc-container>
+</section>
+<section class="feature text-bottom">
+	<mc-container>
+		<mc-feature>
+			<mc-content>
+				<h2>Let's launch<br/> something special</h2>
+				<p>We are a collective of industry professionals who know how to craft creative strategies, persuasive communications, and digital experiences in order to grow brands and businesses.</p>
+				<p>Our leadership team is composed of three industry experts: Kelly Groglio, Marty Ellery, and William Cowen. We each offer different expertise and perspectives that when combined creates a holistic marketing strategy.  With well over a decade of industry experience and our mixed background of agency, in-house and consultancy experience you can trust we understand your marketing needs and goals. Together, with you, we can create something stellar.</p>
+			</mc-content>
+			<mc-content class = "special">
+				<img class = "relative ball" src="illustation2-1-planet@2x.png" />
+				<img class = "absolute moto" src="illustation2-2-moto@2x.png" />
+				<img class = "absolute sparkles" src="illustation2-3-notifications@2x.png" />
+			</mc-content>
+		</mc-feature>
+	</mc-container>
+</section>
+<section class="bg-alt features">
+	<mc-container>
+		<mc-features>
+			<mc-row col-default="3">
+				<mc-col s="12" ms="12" md="4">
+					<div class = "profile"><div class = "flip"><img src="https://pbs.twimg.com/profile_images/605140374554701824/0FIZ6qF7_400x400.jpg" /><img src = "Moto headshots-02.png"/></div></div>
+					<h2>Marketing & Creative</h2>
+					<p>Kelly is both a marketer and a creative. She has been working in the industry for over a decade and has led creative teams. As a marketer she believes in crafting holistic strategies and as a creative she provide leadership and direction to the production and execution process. </p>
+				</mc-col>
+				<mc-col s="12" ms="12" md="4">
+					<div class = "profile"><div class = "flip"><img src="https://www.nelsonschmidt.com/wp-content/uploads/headshot_marty-1.jpg" /><img src ="Moto headshots-03.png"/></div></div>
+					<h2>Strategic Communications</h2>
+					<p>Marty is a veteran strategic  communications professional. She has led public relation departments and has crafted brand messaging for numerous companies. Her mastery of words and communications enables her to help businesses tell their story to their target audiences.</p>
+				</mc-col>
+				<mc-col s="12" ms="12" md="4">
+					<div class = "profile"><div class = "flip"><img src="https://windailysports.com/wp-content/uploads/2020/06/21273457_10213889004480326_8917962074572070566_o.jpg" /><img src ="Moto headshots-01.png"/></div></div>
+					<h2>Technology & Development</h2>
+					<p>William lives and breaths all things digital. He has led development teams for game development companies, startups, and large established businesses. As a coder and developer himself he knows how to engineer scalable technical solutions, such as: websites, digital experiences, apps, etc.</p>
+				</mc-col>
+			</mc-row>
+		</mc-features>
+	</mc-container>
+</section>
+<section class="cta">
+	<mc-container>
+		<div class = "cta-cont">
+			<h1 style="">How can we help you?</h1>
+			{/*<!---<select name="services" id="service-select">
+			<option value="">Please Select Service</option>
+			<option value="web">Website 
+				Design & Development</option>
+				<option value="brand">Branding & Creative</option>
+				<option value="ads">Advertising & Marketing</option>
+			</select>--->*/}
+		</div>
+	</mc-container>
+</section>
+
+<mc-container>
+    <mc-inner-container>    
+
+    </mc-inner-container>
+</mc-container>

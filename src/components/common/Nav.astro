@@ -15,20 +15,20 @@ const navigation = [
 ]
 ---
 <nav id="main" class="main">
-    <div class="container">
-        <div class="inner-container">
-    <div class = "logo">
-        <a href="/">
-            <img src="https://th.bing.com/th/id/R.c0868515b442d1a3b1f66a2b88a785dc?rik=vtx5SDlnD7fxTQ&riu=http%3a%2f%2fmedia.giphy.com%2fmedia%2fPosxo8i6NKrC0%2fgiphy.gif&ehk=kiVt7H%2bOfc1Z8QO8lcD%2bi4M4dut2L4UYf1WGBhVFrAQ%3d&risl=&pid=ImgRaw&r=0" alt="logo" width="100px" height="64px">
-        </a>
-    </div>
-    <ul>
-        {navigation.map((item) => (
-            <li><a href={item.url}>{item.title}</a></li>
-        ))}
-    </ul>
-</div>
-</div>
+    <mc-container>
+        <mc-inner-container>
+            <div class = "logo">
+                <a href="/" style="color:#141522;">
+                    Modocosm
+                </a>
+            </div>
+            <ul>
+                <!-- {navigation.map((item) => (
+                    <li><a href={item.url}>{item.title}</a></li>
+                ))} -->
+            </ul>
+        </mc-inner-container>
+    </mc-container>
 </nav>
 
 <style>
