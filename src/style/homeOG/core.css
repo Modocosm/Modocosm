@@ -1,0 +1,343 @@
+/*=================================*/
+/*=================================*/
+/* Universal */
+/*================================*/
+/*================================*/
+mc-dobetter {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+@supports (grid-area: auto) {
+    mc-dobetter {
+        display: none;
+    }
+}
+/* Main Containers */
+/* Spacers */
+mc-container {
+    padding: 0px 20px;
+    display: block;
+}
+mc-spacer {
+    height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+mc-spacer[type="medium"] {
+    margin: 20px 0px;
+}
+mc-spacer[type="large"] {
+    margin: 50px 0px;
+}
+mc-spacer[type="xl"] {
+    margin: 100px 0px;
+}
+/* Columns*/
+/* Rows and Columns */
+mc-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+mc-row mc-col {
+    padding: 0px 18px;
+    height: 100%;
+}
+mc-row[gutters="false"] mc-col {
+    padding: 0px;
+    vertical-align: center;
+}
+
+mc-row[type="custom-col"] mc-col[s="0"],
+mc-row[type="custom-col"] mc-col[ms="0"],
+mc-row[type="custom-col"] mc-col[md="0"],
+mc-row[type="custom-col"] mc-col[lg="0"],
+mc-row[type="custom-col"] mc-col[xl="0"] {
+    display: none;
+}
+/* Columns */
+/* Always Include these as a fallback */
+mc-col[s="0"] {
+    display: none;
+}
+mc-col[s="1"] {
+    width: calc(100% / 12 * 1);
+}
+mc-col[s="2"] {
+    width: calc(100% / 12 * 2);
+}
+mc-col[s="3"] {
+    width: calc(100% / 12 * 3);
+}
+mc-col[s="4"] {
+    width: calc(100% / 12 * 4);
+}
+mc-col[s="5"] {
+    width: calc(100% / 12 * 5);
+}
+mc-col[s="6"] {
+    width: calc(100% / 12 * 6);
+}
+mc-col[s="7"] {
+    width: calc(100% / 12 * 7);
+}
+mc-col[s="8"] {
+    width: calc(100% / 12 * 8);
+}
+mc-col[s="9"] {
+    width: calc(100% / 12 * 9);
+}
+mc-col[s="10"] {
+    width: calc(100% / 12 * 10);
+}
+mc-col[s="11"] {
+    width: calc(100% / 12 * 11);
+}
+mc-col[s="12"] {
+    width: calc(100% / 12 * 12);
+}
+mc-col[s="fill"] {
+    flex-grow: 12;
+}
+
+@media (min-width: 767px) {
+    /* Tablets and Up */
+    /* [ms="x"] */
+    mc-col[ms="0"] {
+        display: none;
+    }
+    mc-col[ms="1"] {
+        width: calc(100% / 12 * 1);
+        display: initial;
+    }
+    mc-col[ms="2"] {
+        width: calc(100% / 12 * 2);
+        display: initial;
+    }
+    mc-col[ms="3"] {
+        width: calc(100% / 12 * 3);
+        display: initial;
+    }
+    mc-col[ms="4"] {
+        width: calc(100% / 12 * 4);
+        display: initial;
+    }
+    mc-col[ms="5"] {
+        width: calc(100% / 12 * 5);
+        display: initial;
+    }
+    mc-col[ms="6"] {
+        width: calc(100% / 12 * 6);
+        display: initial;
+    }
+    mc-col[ms="7"] {
+        width: calc(100% / 12 * 7);
+        display: initial;
+    }
+    mc-col[ms="8"] {
+        width: calc(100% / 12 * 8);
+        display: initial;
+    }
+    mc-col[ms="9"] {
+        width: calc(100% / 12 * 9);
+        display: initial;
+    }
+    mc-col[ms="10"] {
+        width: calc(100% / 12 * 10);
+        display: initial;
+    }
+    mc-col[ms="11"] {
+        width: calc(100% / 12 * 11);
+        display: initial;
+    }
+    mc-col[ms="12"] {
+        width: calc(100% / 12 * 12);
+        display: initial;
+    }
+    mc-col[ms="fill"] {
+        flex-grow: 12;
+        display: initial;
+    }
+}
+@media (min-width: 992px) {
+    /* Netbooks and Macbook Air */
+    /* [md="x"] */
+    mc-col[md="0"] {
+        display: none;
+    }
+    mc-col[md="1"] {
+        width: calc(100% / 12 * 1);
+        display: initial;
+    }
+    mc-col[md="2"] {
+        width: calc(100% / 12 * 2);
+        display: initial;
+    }
+    mc-col[md="3"] {
+        width: calc(100% / 12 * 3);
+        display: initial;
+    }
+    mc-col[md="4"] {
+        width: calc(100% / 12 * 4);
+        display: initial;
+    }
+    mc-col[md="5"] {
+        width: calc(100% / 12 * 5);
+        display: initial;
+    }
+    mc-col[md="6"] {
+        width: calc(100% / 12 * 6);
+        display: initial;
+    }
+    mc-col[md="7"] {
+        width: calc(100% / 12 * 7);
+        display: initial;
+    }
+    mc-col[md="8"] {
+        width: calc(100% / 12 * 8);
+        display: initial;
+    }
+    mc-col[md="9"] {
+        width: calc(100% / 12 * 9);
+        display: initial;
+    }
+    mc-col[md="10"] {
+        width: calc(100% / 12 * 10);
+        display: initial;
+    }
+    mc-col[md="11"] {
+        width: calc(100% / 12 * 11);
+        display: initial;
+    }
+    mc-col[md="12"] {
+        width: calc(100% / 12 * 12);
+        display: initial;
+    }
+    mc-col[md="fill"] {
+        flex-grow: 12;
+        display: initial;
+    }
+}
+@media (min-width: 1201px) {
+    /* Standard For most Desktop and Laptops in 2020, including 1080p */
+    /* [lg="x"] */
+    mc-col[lg="0"] {
+        display: none;
+    }
+    mc-col[lg="1"] {
+        width: calc(100% / 12 * 1);
+        display: initial;
+    }
+    mc-col[lg="2"] {
+        width: calc(100% / 12 * 2);
+        display: initial;
+    }
+    mc-col[lg="3"] {
+        width: calc(100% / 12 * 3);
+        display: initial;
+    }
+    mc-col[lg="4"] {
+        width: calc(100% / 12 * 4);
+        display: initial;
+    }
+    mc-col[lg="5"] {
+        width: calc(100% / 12 * 5);
+        display: initial;
+    }
+    mc-col[lg="6"] {
+        width: calc(100% / 12 * 6);
+        display: initial;
+    }
+    mc-col[lg="7"] {
+        width: calc(100% / 12 * 7);
+        display: initial;
+    }
+    mc-col[lg="8"] {
+        width: calc(100% / 12 * 8);
+        display: initial;
+    }
+    mc-col[lg="9"] {
+        width: calc(100% / 12 * 9);
+        display: initial;
+    }
+    mc-col[lg="10"] {
+        width: calc(100% / 12 * 10);
+        display: initial;
+    }
+    mc-col[lg="11"] {
+        width: calc(100% / 12 * 11);
+        display: initial;
+    }
+    mc-col[lg="12"] {
+        width: calc(100% / 12 * 12);
+        display: initial;
+    }
+    mc-col[lg="fill"] {
+        flex-grow: 12;
+        display: initial;
+    }
+}
+@media (min-width: 1921px) {
+    /* Retina 2k and 4k */
+    /* [xl="x"] */
+    jk-col[xl="0"] {
+        display: none;
+        display: initial;
+    }
+    jk-col[xl="1"] {
+        width: calc(100% / 12 * 1);
+        display: initial;
+    }
+    jk-col[xl="2"] {
+        width: calc(100% / 12 * 2);
+        display: initial;
+    }
+    jk-col[xl="3"] {
+        width: calc(100% / 12 * 3);
+        display: initial;
+    }
+    jk-col[xl="4"] {
+        width: calc(100% / 12 * 4);
+        display: initial;
+    }
+    jk-col[xl="5"] {
+        width: calc(100% / 12 * 5);
+        display: initial;
+    }
+    jk-col[xl="6"] {
+        width: calc(100% / 12 * 6);
+        display: initial;
+    }
+    jk-col[xl="7"] {
+        width: calc(100% / 12 * 7);
+        display: initial;
+    }
+    jk-col[xl="8"] {
+        width: calc(100% / 12 * 8);
+        display: initial;
+    }
+    jk-col[xl="9"] {
+        width: calc(100% / 12 * 9);
+        display: initial;
+    }
+    jk-col[xl="10"] {
+        width: calc(100% / 12 * 10);
+        display: initial;
+    }
+    jk-col[xl="11"] {
+        width: calc(100% / 12 * 11);
+        display: initial;
+    }
+    jk-col[xl="12"] {
+        width: calc(100% / 12 * 12);
+        display: initial;
+    }
+    jk-col[xl="fill"] {
+        flex-grow: 12;
+        display: initial;
+    }
+}
