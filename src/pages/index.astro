@@ -6,7 +6,7 @@ const email = 'info@modocosm.io';
 const password = '3G@&Lx3r#GKLen4q';
 const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
 await client.login(email, password);
-export const result = await client.request(
+const result = await client.request(
     readItems('Pages', {
         fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
     })                                                                                                                                                                             
@@ -20,7 +20,7 @@ export const content = {
     "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
     "url": ""
 };
-
+export const Slug = "index";
 ---
 
 <Demo content={content}>
@@ -33,7 +33,7 @@ export const content = {
                     <li>
                         <a href={'/'+item.Slug}>{item.Title}</a>
                     </li>
-                    <Code lang="json" code={JSON.stringify(item, null, 2)}/>
+                    // <Code lang="json" code={JSON.stringify(item, null, 2)}/>
                 ))}
             </ul>
         </mc-inner-container>
@@ -45,7 +45,45 @@ export const content = {
     <Code lang="json" code={JSON.stringify(result, null, 2)}/>
     
 
+
+
+    
     <h1>Meta</h1>
     <Code lang="json" code={JSON.stringify(meta, null, 2)}/> -->
 </Demo>
 
+<style>
+    body{
+        background:#121212;
+        color:white;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color:#e4e4e4;
+    }
+    ul {
+        margin-left:unset;
+        padding-left:unset;
+        list-style: none;
+    }
+    li {
+        list-style-type: none;
+        display:inline-block;
+        /* Glassmorphism */
+        background: rgba( 150, 0, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        padding: 16px;
+        margin-bottom: 16px;
+        margin-right:16px;
+        margin-left:unset;
+    }
+    li a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform:uppercase;
+    }
+</style>
