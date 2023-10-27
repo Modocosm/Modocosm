@@ -51,13 +51,15 @@ export const content = {
 //js if statement
 
 ---
-<h1>Debug</h1>
-<h2>Page Title: {page.Title}</h2>
+<div>
+    <h1 class = "debug">Debug</h1>
+    <h2>Page Title: {page.Title}</h2>
+</div>
 {JSON.stringify(Slug,null,2)}
 
 {page.Slice_Master.map(slice => {
     if (slice.collection === "Hero_Sandbox") {
-        return <section class="nopad hero">
+        return <h1 class = "debug">Hero Sandbox</h1><section class="nopad hero">
 			<mc-container>
 				<mc-hero>
                     {slice.item.Images.map(image => {
@@ -71,7 +73,7 @@ export const content = {
 			</mc-container>
 		</section>
     } else if (slice.collection === "Basic_Cta") {
-        return <section class = "novacancy">
+        return <h1 class ="debug">No Vacanacy</h1><section class = "novacancy">
 			<mc-container>
 				<mc-inner-container>
 				<mc-flex>
@@ -85,14 +87,14 @@ export const content = {
 		</mc-container>
 		</section>
     } else if (slice.collection === "Content_Pair_Sandbox") {
-        return <h1>Content Pair Sandbox</h1>
+        return <h1 class="debug">Content Pair Sandbox</h1>
         <section class="feature feature-left">
 			<mc-container>
 				<mc-feature>
 					{
                         ()=> {
                             if (slice.item.Left_Aligned === true) {
-                                return <mc-content class = "relative anim">
+                                return <mc-content class:list={slice.item.Image_Container_Classes}>
                                     {slice.item.Images.map(image => {
                                         return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
                                     })}
@@ -106,7 +108,7 @@ export const content = {
 						            <h2 set:html={slice.item.Title}></h2>
 						            <Fragment slot="body" set:html={slice.item.Content_Block} />
 					            </mc-content>
-                                <mc-content class = "relative anim">
+                                <mc-content class:list={slice.item.Image_Container_Classes}>
                                     {slice.item.Images.map(image => {
                                         return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
                                     })}
@@ -120,7 +122,7 @@ export const content = {
 			</mc-container>
 		</section>
     } else if(slice.collection === "Content_Columns") {
-        return <h1>Content Columns</h1>
+        return <h1 class="debug">Content Columns</h1>
         <section class="bg-alt features center">
 			<mc-container>
 				<mc-features>
@@ -161,3 +163,33 @@ export const content = {
 })}
 <Code lang="json" code={JSON.stringify(page.Slice_Master,null,2)}/>
 
+<style>
+    .debug {
+        position:absolute;
+        /* background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%); */
+        webkit-background-clip: text;
+        background-clip: text;
+        /* -webkit-text-fill-color: transparent; */
+        text-shadow: 0px 0px 10px rgba(255,0,0,1);
+        font-size: 2rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 900;
+        z-index: 100;
+        opacity: 0.5;
+    }
+    .debug::after {
+        content: "";
+        width:100%;
+        height:100%;
+        background:darkorange;
+        z-index: -1;
+        position:absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        font-size: 2rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 900;
+        z-index: -100;
+    }
+</style>
