@@ -1,6 +1,9 @@
 ---
 import { createDirectus, authentication,rest, readItems } from '@directus/sdk';
 import { Code } from 'astro:components';
+import '/src/style/homeOG/normalize.css';
+import '/src/style/homeOG/core.css';
+import '/src/style/homeOG/style.css';
 const {Slug} = Astro.props;
 // const email = 'info@modocosm.io';
 // const password = '3G@&Lx3r#GKLen4q';
@@ -125,30 +128,28 @@ export const content = {
                         {slice.item.Content_Block.map(cols => {
                                 return <mc-col s="12" ms="12" md="4">
 							        <Fragment slot="body" set:html={cols.Icon} />
-                                    {() => {const data = JSON.parse(cols); return data + JSON.stringify(cols)}}
+                                    
                                     
                                     { () => {
+                                        try {
                                         if (cols.Image === null) {
-                                            return <h2>Null</h2>
+                                            
                                         } else {
-                                            return <h2>{cols.Title}</h2>
+                                            return <div class = "profile"><div class = "flip">
+                                                <img src ={"https://modocosm.up.railway.app/assets/"+cols.Image.key}/>
+                                                <img src ={"https://modocosm.up.railway.app/assets/"+cols.Image.key}/>
+                                            </div></div>
                                         }
-                                    }}
+                                    } catch (error) {
+                                        
+                                    }}}
 							        <h2>{cols.Title}</h2>
 							        <Fragment slot="body" set:html={cols.Content} />
 						        </mc-col>
                                     })}
 						
-						<mc-col s="12" ms="12" md="4">
-							<i class="fa-solid fa-rectangle-ad"></i>
-							<h2>Advertising & Marketing</h2>
-							<p>Make new friends and fans through targeted outreach and inbound marketing. Sophisticated marketing strategies that deliver impact and growth. </p>
-						</mc-col>
-						<mc-col s="12" ms="12" md="4">
-							<i class="fa-solid fa-browser"></i>
-							<h2>Web Design & Development</h2>
-							<p>Professional website design and development. No templates, themes, or shortcuts taken. Each website is designed based on your brand’s guidelines, and custom coded.</p>
-						</mc-col>
+						
+						
 					</mc-row>
 				</mc-features>
 			</mc-container>
