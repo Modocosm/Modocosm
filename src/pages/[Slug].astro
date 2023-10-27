@@ -2,22 +2,34 @@
 import { createDirectus, authentication,rest, readItems } from '@directus/sdk';
 import { Code } from 'astro:components';
 const {Slug} = Astro.props;
-const email = 'info@modocosm.io';
-const password = '3G@&Lx3r#GKLen4q';
-const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
-await client.login(email, password);
+// const email = 'info@modocosm.io';
+// const password = '3G@&Lx3r#GKLen4q';
+// const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
+// await client.login(email, password);
 export async function getStaticPaths() {
-    return [
-        {params: {Slug: 'test-page'}},
-        {params: {Slug: 'test-page-2'}},
-    ]
+    const email = 'info@modocosm.io';
+    const password = '3G@&Lx3r#GKLen4q';
+    const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
+    await client.login(email, password);
+    const pages = await client.request(
+        readItems('Pages', {
+            fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
+        })
+    );
+    const paths = pages.map((page) => ({
+        params: { Slug: page.Slug },
+    }));
+    for (const [index, page] of Object.entries(pages)) {
+        pages[index] = {
+            params: { Slug: page.Slug },
+            props: {
+                page: page,
+            },
+        }
+    }
+    return pages;
 }
-const results = await client.request(
-    readItems('Pages', {
-        fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
-    })
-);
-const meta = await client.request(readItems('Modocosm_Core'));
+const page = Astro.props;
 export const content = {
     "title": "Modocosm Demo Env", 
     "fonts": [ "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap" ], 
@@ -30,5 +42,5 @@ export const content = {
 ---
 <h1>Debug</h1>
 {JSON.stringify(Slug,null,2)}
-<Code lang="json" code={JSON.stringify(results,null,2)}/>
+<Code lang="json" code={JSON.stringify(page,null,2)}/>
 

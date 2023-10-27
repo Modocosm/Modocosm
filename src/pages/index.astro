@@ -11,6 +11,13 @@ const result = await client.request(
         fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
     })                                                                                                                                                                             
 );
+const formattedPages = result.map((page) => {
+    return {
+        ...page
+    }
+});
+const [page] = formattedPages;
+
 const meta = await client.request(readItems('Modocosm_Core'));
 export const content = {
     "title": "Modocosm Demo Env", 
