@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     await client.login(email, password);
     const pages = await client.request(
         readItems('Pages', {
-            fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
+            fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*.*',{Content_Block:['*'], CTA_Hero:['*'], Hero_Sandbox:['*.*.*'] }] }] }],
         })
     );
     const paths = pages.map((page) => ({
@@ -29,7 +29,9 @@ export async function getStaticPaths() {
     }
     return pages;
 }
-const page = Astro.props;
+const page = Astro.props.page;
+/* [object Object] JSON correction */
+
 export const content = {
     "title": "Modocosm Demo Env", 
     "fonts": [ "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap" ], 
@@ -38,9 +40,122 @@ export const content = {
     "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
     "url": ""
 };
+// const parsedPage = JSON.stringify(page)
+// const data = [parsedPage]
+// const rawPage = JSON.parse(parsedPage)
+
+
+//js if statement
 
 ---
 <h1>Debug</h1>
+<h2>Page Title: {page.Title}</h2>
 {JSON.stringify(Slug,null,2)}
-<Code lang="json" code={JSON.stringify(page,null,2)}/>
+
+{page.Slice_Master.map(slice => {
+    if (slice.collection === "Hero_Sandbox") {
+        return <section class="nopad hero">
+			<mc-container>
+				<mc-hero>
+                    {slice.item.Images.map(image => {
+                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                    })}
+					<div class = "content">
+						<h1>{slice.item.Title}</h1>
+						<p>{slice.item.SubTitle}</p>
+					</div>
+				</mc-hero>
+			</mc-container>
+		</section>
+    } else if (slice.collection === "Basic_Cta") {
+        return <section class = "novacancy">
+			<mc-container>
+				<mc-inner-container>
+				<mc-flex>
+					<div class = "content">
+					<h3>{slice.item.Title}</h3>
+					<p>{slice.item.Content}</p>
+				</div>
+				<mc-btn class="flex v-center"><a href={slice.item.Button_Link}>{slice.item.Button_Text}</a></mc-btn>
+			</mc-flex>
+			</mc-inner-container>
+		</mc-container>
+		</section>
+    } else if (slice.collection === "Content_Pair_Sandbox") {
+        return <h1>Content Pair Sandbox</h1>
+        <section class="feature feature-left">
+			<mc-container>
+				<mc-feature>
+					{
+                        ()=> {
+                            if (slice.item.Left_Aligned === true) {
+                                return <mc-content class = "relative anim">
+                                    {slice.item.Images.map(image => {
+                                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                                    })}
+					            </mc-content>
+                                <mc-content>
+						            <h2 set:html={slice.item.Title}></h2>
+						            <Fragment slot="body" set:html={slice.item.Content_Block} />
+					            </mc-content>
+                            } else {
+                                <mc-content>
+						            <h2 set:html={slice.item.Title}></h2>
+						            <Fragment slot="body" set:html={slice.item.Content_Block} />
+					            </mc-content>
+                                <mc-content class = "relative anim">
+                                    {slice.item.Images.map(image => {
+                                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                                    })}
+					            </mc-content>
+                            }
+                        }
+                    }
+					
+
+				</mc-feature>
+			</mc-container>
+		</section>
+    } else if(slice.collection === "Content_Columns") {
+        return <h1>Content Columns</h1>
+        <section class="bg-alt features center">
+			<mc-container>
+				<mc-features>
+					<mc-row col-default="3">
+                        {slice.item.Content_Block.map(cols => {
+                                return <mc-col s="12" ms="12" md="4">
+							        <Fragment slot="body" set:html={cols.Icon} />
+                                    {JSON.stringify(cols.Image).key}
+                                    { () => {
+                                        if (cols.Image === null) {
+                                            return <h2>Null</h2>
+                                        } else {
+                                            return <h2>{cols.Title}</h2>
+                                        }
+                                    }}
+							        <h2>{cols.Title}</h2>
+							        <Fragment slot="body" set:html={cols.Content} />
+						        </mc-col>
+                                    })}
+						
+						<mc-col s="12" ms="12" md="4">
+							<i class="fa-solid fa-rectangle-ad"></i>
+							<h2>Advertising & Marketing</h2>
+							<p>Make new friends and fans through targeted outreach and inbound marketing. Sophisticated marketing strategies that deliver impact and growth. </p>
+						</mc-col>
+						<mc-col s="12" ms="12" md="4">
+							<i class="fa-solid fa-browser"></i>
+							<h2>Web Design & Development</h2>
+							<p>Professional website design and development. No templates, themes, or shortcuts taken. Each website is designed based on your brand’s guidelines, and custom coded.</p>
+						</mc-col>
+					</mc-row>
+				</mc-features>
+			</mc-container>
+		</section>
+
+    } else {
+        return <h1>Not Found</h1>
+    }
+})}
+<Code lang="json" code={JSON.stringify(page.Slice_Master,null,2)}/>
 

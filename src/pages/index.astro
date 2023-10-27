@@ -13,7 +13,7 @@ const result = await client.request(
 );
 const formattedPages = result.map((page) => {
     return {
-        ...page
+        ...page, Slug: page.Slug.replace(/\/$/, "")
     }
 });
 const [page] = formattedPages;
@@ -43,6 +43,7 @@ export const Slug = "index";
                     // <Code lang="json" code={JSON.stringify(item, null, 2)}/>
                 ))}
             </ul>
+            <Code lang="json" code={JSON.stringify(result, null, 2)}/>
         </mc-inner-container>
     </mc-container>
     <!-- <h1>Result</h1> -->
