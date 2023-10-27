@@ -125,7 +125,8 @@ export const content = {
                         {slice.item.Content_Block.map(cols => {
                                 return <mc-col s="12" ms="12" md="4">
 							        <Fragment slot="body" set:html={cols.Icon} />
-                                    {JSON.stringify(cols.Image.item)}
+                                    {() => {const data = "{'bob':"+JSON.stringify(cols.Image)+"}"; return JSON.parse(data)}}
+                                    
                                     { () => {
                                         if (cols.Image === null) {
                                             return <h2>Null</h2>
