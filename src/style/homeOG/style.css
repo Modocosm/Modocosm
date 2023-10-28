@@ -145,7 +145,7 @@ mc-flex,
 /*Navbar*/
 .navigation,
 .navigation-filler {
-    /* height: 70px; */
+    height: 70px;
     width: 100%;
 }
 .navigation {
@@ -386,7 +386,8 @@ mc-features h2 {
     text-align: center;
     margin-bottom:0px;
     margin-top:0px;
-    padding-top:0px;
+    padding-top:32px;
+    padding-bottom:32px;
 }
 section.cta {
     padding-bottom:32px;
@@ -831,4 +832,10 @@ section.novacancy mc-btn {
         display:block;
         text-align: Center;
     }
+}
+
+
+nav mc-container, #footer mc-container {
+    width:unset;
+    max-width:unset;
 }
