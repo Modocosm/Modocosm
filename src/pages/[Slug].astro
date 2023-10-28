@@ -47,6 +47,20 @@ export const content = {
 //js if statement
 
 ---
+<section class="nopad navigation">
+    <mc-container>
+        <mc-inner-container>
+        <mc-flex class="flex v-center">
+            <mc-logo class="flex v-center"> 
+                Modocosm
+            </mc-logo>
+            <mc-btn class="flex v-center">
+                <!-- <a href="https://airtable.com/shr7eFiGikGmuNdsu/">Get In Touch</a> -->
+            </mc-btn>
+        </mc-flex>
+        </mc-inner-container>
+    </mc-container>
+</section>
 <div>
     <h1 class = "debug">Debug</h1>
     <h2>Page Title: {page.Title}</h2>
@@ -157,6 +171,17 @@ export const content = {
         return <h1>Not Found</h1>
     }
 })}
+<section id="footer" class="footer nopad">
+    <mc-container>
+        <div class = "footer-cont">
+            <div class = "content">
+                <h1>Modocosm</h1>
+                <h4>a digital marketing shop</h4>
+            </div>
+            <p>All Rights Reserved 2022©</p>
+        </div>
+    </mc-container>
+</section>
 <Code lang="json" code={JSON.stringify(page.Slice_Master,null,2)}/>
 
 <style>
