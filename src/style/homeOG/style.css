@@ -835,7 +835,7 @@ section.novacancy mc-btn {
 }
 
 
-nav mc-container, #footer mc-container {
+.navigation mc-container, #footer mc-container {
     width:unset;
     max-width:unset;
 }
