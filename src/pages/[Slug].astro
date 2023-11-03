@@ -94,17 +94,15 @@ export const content = {
         </mc-inner-container>
     </mc-container>
 </section>
-<div class = "debug">
+<!-- <div class = "debug">
     <h1 class = "debug">Debug</h1>
     <h2>Page Title: {page.Title}</h2>
 </div>
-{JSON.stringify(Slug,null,2)}
+{JSON.stringify(Slug,null,2)} -->
 
 {page.Slice_Master.map(slice => {
     if (slice.collection === "Hero_Sandbox") {
-        return 
-        // <h1 class = "debug">Hero Sandbox</h1>
-        <section class="nopad hero">
+        return <section class="nopad hero">
 			<mc-container>
 				<mc-hero>
                     {slice.item.Images.map(image => {
@@ -118,9 +116,7 @@ export const content = {
 			</mc-container>
 		</section>
     } else if (slice.collection === "Basic_Cta") {
-        return 
-        // <h1 class ="debug">No Vacanacy</h1>
-        <section class = "novacancy">
+        return <section class = "novacancy">
 			<mc-container>
 				<mc-inner-container>
 				<mc-flex>
@@ -134,9 +130,7 @@ export const content = {
 		</mc-container>
 		</section>
     } else if (slice.collection === "Content_Pair_Sandbox") {
-        return 
-        // <h1 class="debug">Content Pair Sandbox</h1>
-        <section class="feature feature-left">
+        return <section class="feature feature-left">
 			<mc-container>
 				<mc-feature>
 					{
@@ -170,9 +164,7 @@ export const content = {
 			</mc-container>
 		</section>
     } else if(slice.collection === "Content_Columns") {
-        return 
-        // <h1 class="debug">Content Columns</h1>
-        <section class="bg-alt features center">
+        return <section class="bg-alt features center">
 			<mc-container>
 				<mc-features>
 					<mc-row col-default="3">
