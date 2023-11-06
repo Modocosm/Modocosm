@@ -4,7 +4,7 @@ import { Code } from 'astro:components';
 import '/src/style/homeOG/normalize.css';
 import '/src/style/homeOG/core.css';
 import '/src/style/homeOG/style.css';
-const {Slug} = Astro.props;
+const {slug} = Astro.props;
 export async function getStaticPaths() {
     const email = 'info@modocosm.io';
     const password = '3G@&Lx3r#GKLen4q';
@@ -12,15 +12,15 @@ export async function getStaticPaths() {
     await client.login(email, password);
     const pages = await client.request(
         readItems('Pages', {
-            fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*.*',{Content_Block:['*'], CTA_Hero:['*'], Hero_Sandbox:['*.*.*'] }] }] }],
+            fields: ['*',"*.slug",{Slice_Master:['*', { item:['*.*',{Content_Block:['*'], CTA_Hero:['*'], Hero_Sandbox:['*.*.*'] }] }] }],
         })
     );
     const paths = pages.map((page) => ({
-        params: { Slug: page.Slug },
+        params: { slug: page.slug },
     }));
     for (const [index, page] of Object.entries(pages)) {
         pages[index] = {
-            params: { Slug: page.Slug },
+            params: { slug: page.slug },
             props: {
                 page: page,
             },
@@ -98,7 +98,7 @@ export const content = {
     <h1 class = "debug">Debug</h1>
     <h2>Page Title: {page.Title}</h2>
 </div>
-{JSON.stringify(Slug,null,2)} -->
+{JSON.stringify(slug,null,2)} -->
 
 {page.Slice_Master.map(slice => {
     if (slice.collection === "Hero_Sandbox") {
@@ -122,9 +122,9 @@ export const content = {
 				<mc-flex>
 					<div class = "content">
 					<h3>{slice.item.Title}</h3>
-					<p>{slice.item.Content}</p>
+					<p><Fragment slot="body" set:html={slice.item.Content} /></p>
 				</div>
-				<mc-btn class="flex v-center"><a href={slice.item.Button_Link}>{slice.item.Button_Text}</a></mc-btn>
+				{/*<mc-btn class="flex v-center"><a href={slice.item.Button_Link}>{slice.item.Button_Text}</a></mc-btn>*/}
 			</mc-flex>
 			</mc-inner-container>
 		</mc-container>
@@ -210,6 +210,7 @@ export const content = {
                 <h4>a digital marketing shop</h4>
             </div>
             <p>All Rights Reserved 2022©</p>
+            <a href="mailto:info@modocosm.io">info@modocosm.io</a>
         </div>
     </mc-container>
 </section>

@@ -8,12 +8,12 @@ const client = createDirectus('https://modocosm.up.railway.app/').with(authentic
 await client.login(email, password);
 const result = await client.request(
     readItems('Pages', {
-        fields: ['*',"*.Slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
+        fields: ['*',"*.slug",{Slice_Master:['*', { item:['*',{Content_Block:['*'], CTA_Hero:['*'] }] }] }],
     })                                                                                                                                                                             
 );
 const formattedPages = result.map((page) => {
     return {
-        ...page, Slug: page.Slug.replace(/\/$/, "")
+        ...page, slug: page.slug.replace(/\/$/, "")
     }
 });
 const [page] = formattedPages;
@@ -27,7 +27,7 @@ export const content = {
     "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
     "url": ""
 };
-export const Slug = "index";
+export const slug = "index";
 ---
 
 <Demo content={content}>
@@ -38,7 +38,7 @@ export const Slug = "index";
             <ul>
                 {result.map((item) => (
                     <li>
-                        <a href={'/'+item.Slug}>{item.Title}</a>
+                        <a href={'/'+item.slug}>{item.Title}</a>
                     </li>
                     // <Code lang="json" code={JSON.stringify(item, null, 2)}/>
                 ))}

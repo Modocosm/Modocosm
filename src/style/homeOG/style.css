@@ -646,7 +646,7 @@ i {
     transition:150ms;
 }
 .bg-alt.features mc-col:hover {
-    background-color:#F5F5F9;
+    /* background-color:#F5F5F9; */
 }
 
 .special {
@@ -791,10 +791,14 @@ i {
     }
 }
 
-
+section.novacancy p a:not(.button) {
+    background-color:unset;
+    padding:unset;
+    margin:unset;
+}
 section.novacancy {
     margin-top:32px;
-    background-color: #f3f3f3;
+    background-color: #eff2f8;
     padding:32px;
 }
 section.novacancy p {
