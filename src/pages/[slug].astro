@@ -1,0 +1,249 @@
+---
+import { createDirectus, authentication,rest, readItems } from '@directus/sdk';
+import { Code } from 'astro:components';
+import '/src/style/homeOG/normalize.css';
+import '/src/style/homeOG/core.css';
+import '/src/style/homeOG/style.css';
+const {slug} = Astro.props;
+export async function getStaticPaths() {
+    const email = 'info@modocosm.io';
+    const password = '3G@&Lx3r#GKLen4q';
+    const client = createDirectus('https://modocosm.up.railway.app/').with(authentication()).with(rest());
+    await client.login(email, password);
+    const pages = await client.request(
+        readItems('Pages', {
+            fields: ['*',"*.slug",{Slice_Master:['*', { item:['*.*',{Content_Block:['*'], CTA_Hero:['*'], Hero_Sandbox:['*.*.*'] }] }] }],
+        })
+    );
+    const paths = pages.map((page) => ({
+        params: { slug: page.slug },
+    }));
+    for (const [index, page] of Object.entries(pages)) {
+        pages[index] = {
+            params: { slug: page.slug },
+            props: {
+                page: page,
+            },
+        }
+    }
+    return pages;
+}
+const page = Astro.props.page;
+/* [object Object] JSON correction */
+
+export const content = {
+    "title": "Modocosm Demo Env", 
+    "fonts": [ "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap" ], 
+    "description": "Modocosm Demo Env", 
+    "keywords": "Modocosm, Astro, AstroJS, AtroJSX, AstroJSXComponents, AstroJSXComponentsLibrary, AstroJSXComponentsLibraryDemo, AstroJSXComponentsLibraryDemoEnv, AstroJSXComponentsLibraryDemoEnvModocosm, AstroJSXComponentsLibraryDemoEnvModocosmDemoEnv",     "author": "JugaadiTech", 
+    "file": "C:/Users/William/Documents/GitHub/modo/Modocosmio/src/pages/index.mdx", 
+    "url": ""
+};
+// const parsedPage = JSON.stringify(page)
+// const data = [parsedPage]
+// const rawPage = JSON.parse(parsedPage)
+
+
+//js if statement
+
+---
+<head>
+    <title>Modocosm</title>
+    <link rel="icon"            type="image/x-icon"     href="/favicon.ico" />
+    <link rel="canonical"       href="https://modocosm.io/"                             />
+    <meta charset="UTF-8"                                                       />
+    <meta name="theme-color"    content="#6F2AE8"                       />
+    <meta name="viewport"       content="width=device-width, initial-scale=1"   />
+    <meta name="description"    content="We help brands and businesses solve their greatest marketing problems. Whether you need brand development, digital marketing, a custom coded website, or content creation - we can help."                      />
+    <meta name="keywords"       content="Agency, Modocosm, Legal Websites, Legal Compliance, Digital Marketing, SEO, Search Engine Optimization, Social Media Marketing, Branding, Design, Digital Automation, Consulting"                         />
+    <meta name="author"         content="Modocosm LLC"                           />
+    <meta name="subject"        content="Digital Marketing Agency"                          />
+    <meta name="copyright"      content="2023 Modocosm LLC"                        />
+    <meta name="Classification" content="Business"                   />
+    <meta name="robots"                         content="index,follow" />
+    <meta http-equiv="Expires"                  content="0"            />
+    <meta http-equiv="Pragma"                   content="no-cache"     />
+    <meta http-equiv="Cache-Control"            content="no-cache"     />
+    <meta http-equiv="imagetoolbar"             content="no"           />
+    <meta http-equiv="x-dns-prefetch-control"   content="off"          />
+    <meta property="og:title"       content="Modocosm: A Digital Marketing Agency" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:image"       content="/Moto headshots-02.png" />
+    <meta property="og:image:alt"   content="Lead Motonaut" />
+    <meta property="og:description" content="We help brands and businesses solve their greatest marketing problems. Whether you need brand development, digital marketing, a custom coded website, or content creation - we can help."/>
+    <meta property="og:site_name"   content="Modocosm: A Digital Marketing Agency" />
+    <meta name="twitter:card"        content="We Build Stellar Brands." />
+    <meta name="twitter:site"        content="@modocosm" />
+    <meta name="twitter:title"       content="Modocosm: A Digital Marketing Agency" />
+    <meta name="twitter:description" content="We help brands and businesses solve their greatest marketing problems. Whether you need brand development, digital marketing, a custom coded website, or content creation - we can help." />
+    <meta name="twitter:creator"     content="@modocosm" />
+    <meta name="twitter:image"       content="/Moto headshots-02.png" />
+    <meta name="twitter:image:alt"   content="Lead Motonaut" />
+</head>
+<section class="nopad navigation">
+    <mc-container>
+        <mc-inner-container>
+        <mc-flex class="flex v-center">
+            <mc-logo class="flex v-center"> 
+                Modocosm
+            </mc-logo>
+            <mc-btn class="flex v-center">
+                <!-- <a href="https://airtable.com/shr7eFiGikGmuNdsu/">Get In Touch</a> -->
+            </mc-btn>
+        </mc-flex>
+        </mc-inner-container>
+    </mc-container>
+</section>
+<!-- <div class = "debug">
+    <h1 class = "debug">Debug</h1>
+    <h2>Page Title: {page.Title}</h2>
+</div>
+{JSON.stringify(slug,null,2)} -->
+
+{page.Slice_Master.map(slice => {
+    if (slice.collection === "Hero_Sandbox") {
+        return <section class="nopad hero">
+			<mc-container>
+				<mc-hero>
+                    {slice.item.Images.map(image => {
+                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                    })}
+					<div class = "content">
+						<h1>{slice.item.Title}</h1>
+						<p>{slice.item.SubTitle}</p>
+					</div>
+				</mc-hero>
+			</mc-container>
+		</section>
+    } else if (slice.collection === "Basic_Cta") {
+        return <section class = "novacancy">
+			<mc-container>
+				<mc-inner-container>
+				<mc-flex>
+					<div class = "content">
+					<h3>{slice.item.Title}</h3>
+					<p><Fragment slot="body" set:html={slice.item.Content} /></p>
+				</div>
+				{/*<mc-btn class="flex v-center"><a href={slice.item.Button_Link}>{slice.item.Button_Text}</a></mc-btn>*/}
+			</mc-flex>
+			</mc-inner-container>
+		</mc-container>
+		</section>
+    } else if (slice.collection === "Content_Pair_Sandbox") {
+        return <section class="feature feature-left">
+			<mc-container>
+				<mc-feature>
+					{
+                        ()=> {
+                            if (slice.item.Left_Aligned === true) {
+                                return <mc-content class:list={slice.item.Image_Container_Classes}>
+                                    {slice.item.Images.map(image => {
+                                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                                    })}
+					            </mc-content>
+                                <mc-content>
+						            <h2 set:html={slice.item.Title}></h2>
+						            <Fragment slot="body" set:html={slice.item.Content_Block} />
+					            </mc-content>
+                            } else {
+                                <mc-content>
+						            <h2 set:html={slice.item.Title}></h2>
+						            <Fragment slot="body" set:html={slice.item.Content_Block} />
+					            </mc-content>
+                                <mc-content class:list={slice.item.Image_Container_Classes}>
+                                    {slice.item.Images.map(image => {
+                                        return <img class:list={image.Custom_Classes} src ={"https://modocosm.up.railway.app/assets/"+image.Image}/>
+                                    })}
+					            </mc-content>
+                            }
+                        }
+                    }
+					
+
+				</mc-feature>
+			</mc-container>
+		</section>
+    } else if(slice.collection === "Content_Columns") {
+        return <section class="bg-alt features center">
+			<mc-container>
+				<mc-features>
+					<mc-row col-default="3">
+                        {slice.item.Content_Block.map(cols => {
+                                return <mc-col s="12" ms="12" md="4">
+							        <Fragment slot="body" set:html={cols.Icon} />
+                                    
+                                    
+                                    { () => {
+                                        try {
+                                        if (cols.Image === null) {
+                                            
+                                        } else {
+                                            return <div class = "profile"><div class = "flip">
+                                                <img src ={"https://modocosm.up.railway.app/assets/"+cols.Image.key}/>
+                                                <img src ={"https://modocosm.up.railway.app/assets/"+cols.Image.key}/>
+                                            </div></div>
+                                        }
+                                    } catch (error) {
+                                        
+                                    }}}
+							        <h2>{cols.Title}</h2>
+							        <Fragment slot="body" set:html={cols.Content} />
+						        </mc-col>
+                                    })}
+						
+						
+						
+					</mc-row>
+				</mc-features>
+			</mc-container>
+		</section>
+
+    } else {
+        return <h1>Not Found</h1>
+    }
+})}
+<section id="footer" class="footer nopad">
+    <mc-container>
+        <div class = "footer-cont">
+            <div class = "content">
+                <h1>Modocosm</h1>
+                <h4>a digital marketing shop</h4>
+            </div>
+            <p>All Rights Reserved 2022©</p>
+            <a href="mailto:info@modocosm.io">info@modocosm.io</a>
+        </div>
+    </mc-container>
+</section>
+<!-- <Code lang="json" code={JSON.stringify(page.Slice_Master,null,2)}/>
+
+<style>
+    .debug {
+        position:absolute;
+        /* background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%); */
+        webkit-background-clip: text;
+        background-clip: text;
+        /* -webkit-text-fill-color: transparent; */
+        text-shadow: 0px 0px 10px rgba(255,0,0,1);
+        font-size: 2rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 900;
+        z-index: 100;
+        opacity: 0.5;
+        display:none;
+    }
+    .debug::after {
+        content: "";
+        width:100%;
+        height:100%;
+        background:darkorange;
+        z-index: -1;
+        position:absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        font-size: 2rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 900;
+        z-index: -100;
+    }
+</style> -->
