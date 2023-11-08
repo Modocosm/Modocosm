@@ -745,6 +745,9 @@ i {
         aspect-ratio: 1;
         overflow:hidden;
     }
+    .anim h2 {
+        margin-top:0x
+    }
     mc-hero {
         height:40vh;
         min-height:unset;
