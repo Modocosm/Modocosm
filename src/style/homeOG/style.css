@@ -474,7 +474,7 @@ mc-hero img {
 max-width:100%;
 min-width:unset;
 		}
-	mc-features p, mc-content p, {
+	mc-features p, mc-content p {
 	font: 20px/28px Lato, sans-serif;
 	}
 	mc-hero {
