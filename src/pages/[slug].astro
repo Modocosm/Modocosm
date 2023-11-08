@@ -164,7 +164,7 @@ export const content = {
 			</mc-container>
 		</section>
     } else if(slice.collection === "Content_Columns") {
-        return <section class="bg-alt features center team">
+        return <section class:list={"bg-alt features center " + slice.item.extra_classes}>
 			<mc-container>
 				<mc-features>
 					<mc-row col-default="3">
