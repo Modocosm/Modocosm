@@ -683,14 +683,16 @@ i {
 
 
 .profile {
+    display:inline-block;
     position: relative;
     background-color: var(--color-bg-alt);
     perspective: 1000px;
-    width:100% !important;
+    width:70% !important;
     height:auto !important;
     aspect-ratio:1;
-    padding:15%;
-    margin-bottom:-5%;
+}
+.team mc-features h2 {
+    margin-top:unset;
 }
 .flip {
     position: relative;
