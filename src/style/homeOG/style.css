@@ -50,11 +50,11 @@
     /*Fonts*/
     --font-head: Lato, sans-serif;
     --font-main: Lato, sans-serif;
-    --font-h1: 38px/48px var(--font-head);
-    --font-h2: 26px/38px var(--font-head);
-    --font-h3: 20px/38px var(--font-head);
-    --font-h4: 18px/26px var(--font-head);
-    --font-h6: 48px/60px var(--font-head);
+    --font-h1: 38px/48px droid_serifbold;
+    --font-h2: 26px/38px droid_serifbold;
+    --font-h3: 20px/38px droid_serifbold;
+    --font-h4: 18px/26px droid_serifbold;
+    --font-h6: 48px/60px droid_serifbold;
     --font-b-01: 18px/26px Lato, sans-serif;
     --font-b-02: bold 18px/26px Lato, sans-serif;
     --btn-border: 3px solid white;
@@ -320,7 +320,7 @@ mc-hero {
     text-align:center;
 }
 mc-hero p {
-font:18px/22px "Lato, sans-serif";
+font:18px/22px "Lato", sans-serif;
     margin-top:0px;
     padding-top:0px;
     padding-bottom:12px;
@@ -330,7 +330,7 @@ mc-hero h1 {
     
 }
 mc-content p {
-    font:18px/26px Lato, sans-serif
+    font:16px/24px Lato, sans-serif;
 }
 mc-content h2 {
     font:36px/48px droid_serifbold;
@@ -348,6 +348,9 @@ mc-features h2 {
     margin-bottom:8px;
     color: #404040;
     text-align:center;
+}
+.team mc-features h2 {
+    font:20px/26px droid_serifbold;
 }
 .profile {
     display:flex;
@@ -468,7 +471,7 @@ mc-hero img {
 max-width:100%;
 min-width:unset;
 		}
-	mc-features p, mc-content p {
+	mc-features p, mc-content p, {
 	font: 20px/28px Lato, sans-serif;
 	}
 	mc-hero {
@@ -585,15 +588,15 @@ mc-hero img.float.right {
 @keyframes float4 {
     0% {
 
-        transform: translate(-50%, -50%) translatey(0px) rotate(15deg);
+        transform: translate(-50%, -50%) translatey(0px) rotate(0deg);
     }
     50% {
 
-        transform: translate(-50%, -50%) translatey(-20px) rotate(20deg);
+        transform: translate(-50%, -50%) translatey(-20px) rotate(0deg);
     }
     100% {
 
-        transform: translate(-50%, -50%) translatey(0px) rotate(15deg);
+        transform: translate(-50%, -50%) translatey(0px) rotate(0deg);
     }
 }
 
@@ -819,6 +822,7 @@ section.novacancy mc-btn {
     display:block;
 } 
 section.novacancy h3+p {
+    font:16px/24px Lato, sans-serif;
     margin-top:0;
     padding-top:0;
 }
