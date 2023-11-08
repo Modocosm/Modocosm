@@ -745,9 +745,6 @@ i {
         aspect-ratio: 1;
         overflow:hidden;
     }
-    .anim h2 {
-        margin-top:0x
-    }
     mc-hero {
         height:40vh;
         min-height:unset;
@@ -795,6 +792,13 @@ i {
 @media (max-width:600px) {
     mc-hero h1 {
         font-size:6.3vw;
+    }
+    .feature h2 {
+        margin-top:-16px;
+        /* padding-top:0px; */
+    }
+    .special+mc-content > h2 {
+        margin-top:-64px;
     }
 }
 
