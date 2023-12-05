@@ -1,0 +1,239 @@
+---
+const data = {
+    type: 'i10', //i10, dio
+    image: '/public/tank/2023/12/5/02.jpg'
+}
+---
+
+<div class = "app">
+    <div class = {"gauge "+data.type} style={"background-image:url("+data.image+")"}>
+        <div class="guides">
+            <span class="a e64 d32 c16 b8 a4"><span>100.00%</span></span>
+            <span class="e e63"><span>98.44%</span></span>
+            <span class="d e62 d31"><span>96.88%</span></span>
+            <span class="e e61"><span>95.31%</span></span>
+            <span class="c e60 d30 c15"><span>93.75%</span></span>
+            <span class="e e59"><span>92.19%</span></span>
+            <span class="d e58 d29"><span>90.63%</span></span>
+            <span class="e e57"><span>89.06%</span></span>
+            <span class="b e56 d28 c14 b7"><span>87.50%</span></span>
+            <span class="e e55"><span>85.94%</span></span>
+            <span class="d e54 d27"><span>84.38%</span></span>
+            <span class="e e53"><span>82.81%</span></span>
+            <span class="c e52 d26 c13"><span>81.25%</span></span>
+            <span class="e e51"><span>79.69%</span></span>
+            <span class="d e50 d25"><span>78.13%</span></span>
+            <span class="e e49"><span>76.56%</span></span>
+            <span class="a e48 d24 c12 b6 a3"><span>75.00%</span></span>
+            <span class="e e47"><span>73.44%</span></span>
+            <span class="d e46 d23"><span>71.88%</span></span>
+            <span class="e e45"><span>70.31%</span></span>
+            <span class="c e44 d22 c11"><span>68.75%</span></span>
+            <span class="e e43"><span>67.19%</span></span>
+            <span class="d e42 d21"><span>65.63%</span></span>
+            <span class="e e41"><span>64.06%</span></span>
+            <span class="b e40 d20 c10 b5"><span>62.50%</span></span>
+            <span class="e e39"><span>60.94%</span></span>
+            <span class="d e38 d19"><span>59.38%</span></span>
+            <span class="e e37"><span>57.81%</span></span>
+            <span class="c e36 d18 c9"><span>56.25%</span></span>
+            <span class="e e35"><span>54.69%</span></span>
+            <span class="d e34 d17"><span>53.13%</span></span>
+            <span class="e e33"><span>51.56%</span></span>
+            <span class="a e32 d16 c8 b4 a2"><span>50.00%</span></span>
+            <span class="e e31"><span>48.44%</span></span>
+            <span class="d e30 d15"><span>46.88%</span></span>
+            <span class="e e29"><span>45.31%</span></span>
+            <span class="c e28 d14 c7"><span>43.75%</span></span>
+            <span class="e e27"><span>42.19%</span></span>
+            <span class="d e26 d13"><span>40.63%</span></span>
+            <span class="e e25"><span>39.06%</span></span>
+            <span class="b e24 d12 c6 b3"><span>37.50%</span></span>
+            <span class="e e23"><span>35.94%</span></span>
+            <span class="d e22 d11"><span>34.38%</span></span>
+            <span class="e e21"><span>32.81%</span></span>
+            <span class="c e20 d10 c5"><span>31.25%</span></span>
+            <span class="e e19"><span>29.69%</span></span>
+            <span class="d e18 d9"><span>28.13%</span></span>
+            <span class="e e17"><span>26.56%</span></span>
+            <span class="a e16 d8 c4 b2 a1"><span>25.00%</span></span>
+            <span class="e e15"><span>23.44%</span></span>
+            <span class="d e14 d7"><span>21.88%</span></span>
+            <span class="e e13"><span>20.31%</span></span>
+            <span class="c e12 d6 c3"><span>18.75%</span></span>
+            <span class="e e11"><span>17.19%</span></span>
+            <span class="d e10 d5"><span>15.63%</span></span>
+            <span class="e e9"><span>14.06%</span></span>
+            <span class="b e8 d4 c2 b1"><span>12.50%</span></span>
+            <span class="e e7"><span>10.94%</span></span>
+            <span class="d e6 d3"><span>9.38%</span></span>
+            <span class="e e5"><span>7.81%</span></span>
+            <span class="c e4 d2 c1"><span>6.25%</span></span>
+            <span class="e e3"><span>4.69%</span></span>
+            <span class="d e2 d1"><span>3.13%</span></span>
+            <span class="e e1"><span>1.56%</span></span>
+            <span class="a e0 d0 c0 b0 a0"><span>0.00%</span></span>
+        </div>
+    </div>
+</div>
+
+<style>
+.app {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+    height:100%;
+    width:100%;
+    min-height:100vh;
+    background: linear-gradient(90deg, #000000 0%, #000000 50%, #000000 50%, #000000 100%);
+}
+.gauge {
+    height:800px;
+    width:800px;
+    position:relative;
+    background-size:cover;
+    box-shadow: 0px 0px 20px 10px #000000 inset, 0px 0px 20px 10px #000000 inset;
+}
+.gauge .guides {
+    display:block;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    transform-origin:left;
+}
+.gauge .guides > span {
+    position: absolute;
+    transform-origin:left;
+    top:50%;
+    left:50%;
+}
+.gauge .guides > span > span {
+    position:absolute;
+    top:100%;
+    left:100%;
+    transform:translate(10%,-50%);
+    font-family:monospace;
+}
+.a {
+    height:8px;
+    background: linear-gradient(90deg, #aaaaff10,#aaaaff20 84%,#aaaaffcc 75%,#aaaaffcc 100% );
+    width:440px;
+    color:#aaaaff;
+    font-size:48px;
+    border:1px solid #aaaaff;
+}
+.b,.c {
+    height:5px;
+    background: linear-gradient(90deg, #ff55aa10,#ff55aa10 355px,#ff55aacc 380px,#ff55aacc 100% );
+    font-size:28px;
+    width:462px;
+    color:#ff55aa;
+    border:1px solid #ff55aa50;
+}
+.d, .e {
+    width:400px;
+    font-size:12px;
+    height:5px;
+}
+.d {
+    color: #009933;
+    background: linear-gradient(90deg, #00993310,#00993310 355px,#009933cc 380px,#009933cc 100% );
+    border:1px solid #00993350;
+}
+.e {
+    color:#ffffff99;
+    background: linear-gradient(90deg, #aaaaaa10,#aaaaaa10 365px,#aaaaaacc 380px,#aaaaaacc 100% );
+    border:1px solid #ffffff50;
+}
+.e64 { transform:translate(0%,-50%) rotate(-42.8000deg) }
+.e63 { transform:translate(0%,-50%) rotate(-41.3969deg) }
+.e62 { transform:translate(0%,-50%) rotate(-39.9938deg) }
+.e61 { transform:translate(0%,-50%) rotate(-38.5906deg) }
+.e60 { transform:translate(0%,-50%) rotate(-37.1875deg) }
+.e59 { transform:translate(0%,-50%) rotate(-35.7844deg) }
+.e58 { transform:translate(0%,-50%) rotate(-34.3813deg) }
+.e57 { transform:translate(0%,-50%) rotate(-32.9781deg) }
+.e56 { transform:translate(0%,-50%) rotate(-31.5750deg) }
+.e55 { transform:translate(0%,-50%) rotate(-30.1719deg) }
+.e54 { transform:translate(0%,-50%) rotate(-28.7688deg) }
+.e53 { transform:translate(0%,-50%) rotate(-27.3656deg) }
+.e52 { transform:translate(0%,-50%) rotate(-25.9625deg) }
+.e51 { transform:translate(0%,-50%) rotate(-24.5594deg) }
+.e50 { transform:translate(0%,-50%) rotate(-23.1563deg) }
+.e49 { transform:translate(0%,-50%) rotate(-21.7531deg) }
+.e48 { transform:translate(0%,-50%) rotate(-20.3500deg) }
+.e47 { transform:translate(0%,-50%) rotate(-19.0000deg) }
+.e46 { transform:translate(0%,-50%) rotate(-17.6500deg) }
+.e45 { transform:translate(0%,-50%) rotate(-16.3000deg) }
+.e44 { transform:translate(0%,-50%) rotate(-14.9500deg) }
+.e43 { transform:translate(0%,-50%) rotate(-13.6000deg) }
+.e42 { transform:translate(0%,-50%) rotate(-12.2500deg) }
+.e41 { transform:translate(0%,-50%) rotate(-10.9000deg) }
+.e40 { transform:translate(0%,-50%) rotate(-9.5500deg) }
+.e39 { transform:translate(0%,-50%) rotate(-8.2000deg) }
+.e38 { transform:translate(0%,-50%) rotate(-6.8500deg) }
+.e37 { transform:translate(0%,-50%) rotate(-5.5000deg) }
+.e36 { transform:translate(0%,-50%) rotate(-4.1500deg) }
+.e35 { transform:translate(0%,-50%) rotate(-2.8000deg) }
+.e34 { transform:translate(0%,-50%) rotate(-1.4500deg) }
+.e33 { transform:translate(0%,-50%) rotate(-0.1000deg) }
+.e32 { transform:translate(0%,-50%) rotate(1.2500deg) }
+.e31 { transform:translate(0%,-50%) rotate(2.6250deg) }
+.e30 { transform:translate(0%,-50%) rotate(4.0000deg) }
+.e29 { transform:translate(0%,-50%) rotate(5.3750deg) }
+.e28 { transform:translate(0%,-50%) rotate(6.7500deg) }
+.e27 { transform:translate(0%,-50%) rotate(8.1250deg) }
+.e26 { transform:translate(0%,-50%) rotate(9.5000deg) }
+.e25 { transform:translate(0%,-50%) rotate(10.8750deg) }
+.e24 { transform:translate(0%,-50%) rotate(12.2500deg) }
+.e23 { transform:translate(0%,-50%) rotate(13.6250deg) }
+.e22 { transform:translate(0%,-50%) rotate(15.0000deg) }
+.e21 { transform:translate(0%,-50%) rotate(16.3750deg) }
+.e20 { transform:translate(0%,-50%) rotate(17.7500deg) }
+.e19 { transform:translate(0%,-50%) rotate(19.1250deg) }
+.e18 { transform:translate(0%,-50%) rotate(20.5000deg) }
+.e17 { transform:translate(0%,-50%) rotate(21.8750deg) }
+.e16 { transform:translate(0%,-50%) rotate(23.2500deg) }
+.e15 { transform:translate(0%,-50%) rotate(24.6094deg) }
+.e14 { transform:translate(0%,-50%) rotate(25.9688deg) }
+.e13 { transform:translate(0%,-50%) rotate(27.3281deg) }
+.e12 { transform:translate(0%,-50%) rotate(28.6875deg) }
+.e11 { transform:translate(0%,-50%) rotate(30.0469deg) }
+.e10 { transform:translate(0%,-50%) rotate(31.4063deg) }
+.e9 { transform:translate(0%,-50%) rotate(32.7656deg) }
+.e8 { transform:translate(0%,-50%) rotate(34.1250deg) }
+.e7 { transform:translate(0%,-50%) rotate(35.4844deg) }
+.e6 { transform:translate(0%,-50%) rotate(36.8438deg) }
+.e5 { transform:translate(0%,-50%) rotate(38.2031deg) }
+.e4 { transform:translate(0%,-50%) rotate(39.5625deg) }
+.e3 { transform:translate(0%,-50%) rotate(40.9219deg) }
+.e2 { transform:translate(0%,-50%) rotate(42.2813deg) }
+.e1 { transform:translate(0%,-50%) rotate(43.6406deg) }
+.e0 { transform:translate(0%,-50%) rotate(45.0000deg) }
+</style>
+<style>
+.i10 .guides span.overfill {
+    transform:translate(0%,-50%) rotate(-45deg);
+}
+.i10 .guides span.full {
+    transform:translate(0%,-50%) rotate(-42deg);
+}
+.i10 .guides span.threequarters {
+    transform:translate(0%,-50%) rotate(-20.75deg);
+}
+.i10 .guides span.half {
+    transform:translate(0%,-50%) rotate(1.25deg);
+}
+.i10 .guides span.quarter {
+    transform:translate(0%,-50%) rotate(23.25deg);
+}
+.i10 .guides span.fumes {
+    transform:translate(0%,-50%) rotate(44.5deg);
+}
+.i10 .guides span.empty {
+    transform:translate(0%,-50%) rotate(47deg);
+}
+</style>
