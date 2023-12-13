@@ -1,13 +1,22 @@
 ---
 const data = {
     type: 'i10', //i10, dio
-    image: '/public/tank/2023/12/06/91.jpg'
+    image: '/public/tank/2023/12/13/99.jpg',
+    rotate: 1,
+    full: -42.8,
+    threeq: -20.75,
+    half: 1.25,
+    quart: 23.25,
+    empty: 45,
 }
+const rotateDeg = data.rotate + "deg";
+
 ---
 
 <div class = "app">
     <div class = {"gauge "+data.type} style={"background-image:url("+data.image+")"}>
         <div class="guides">
+            <span class="needle"></span>
             <span class="a e64 d32 c16 b8 a4"><span>100.00%</span></span>
             <span class="e e63"><span>98.44%</span></span>
             <span class="d e62 d31"><span>96.88%</span></span>
@@ -77,7 +86,7 @@ const data = {
     </div>
 </div>
 
-<style>
+<style define:vars={{rotateDeg}}>
 .app {
     display:flex;
     flex-direction:row;
@@ -103,7 +112,7 @@ const data = {
     top:0;
     left:0;
     transform-origin:center;
-    transform: rotate(-2deg);
+    transform: rotate(var(--rotateDeg));
 }
 .gauge .guides > span {
     position: absolute;
@@ -236,5 +245,8 @@ const data = {
 }
 .i10 .guides span.empty {
     transform:translate(0%,-50%) rotate(47deg);
+}
+.e, .d, .c, .b {
+    display:none;
 }
 </style>
