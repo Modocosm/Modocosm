@@ -3,15 +3,23 @@ const data = {
     type: 'i10', //i10, dio
     image: '/public/tank/2023/12/13/99.jpg',
     rotate: 1,
+    needle: 100, // percentage
     full: -42.8,
     threeq: -20.75,
     half: 1.25,
     quart: 23.25,
     empty: 45,
 }
+const range = [data.full, data.empty];
+const needlePos = data.needle;
 const rotateDeg = data.rotate + "deg";
-
+/* map needle position percentage to range */
+const scale = (value, [min, max]) => {
+    return (value - min) * 100 / (max - min);
+}
+const needleDeg = scale(data.needle, [data.full,data.empty]);
 ---
+{needleDeg}
 
 <div class = "app">
     <div class = {"gauge "+data.type} style={"background-image:url("+data.image+")"}>
@@ -248,5 +256,27 @@ const rotateDeg = data.rotate + "deg";
 }
 .e, .d, .c, .b {
     display:none;
+}
+.needle {
+    background:red;
+    height:1px;
+    width:100%;
+    transform:rotate(-42.8deg);
+    position:absolute;
+    transform-origin:right;
+}
+.needle::before{
+    --diameter:72px;
+    content:"";
+    display:block;
+    height:var(--diameter);
+    width:var(--diameter);
+    border-radius: 100%;
+    background:radial-gradient(#0000FF90,#0000FF50, #00FFFF00, #00FFFF50, #FF00FF50, #00FFFF50,#FFFFFF90,#FFFFFF90);
+    border:2px solid #FF0000;
+    position: absolute;
+    top:calc(var(--diameter)/-2);
+    left:calc(var(--diameter)/-2);
+    
 }
 </style>
