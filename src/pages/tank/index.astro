@@ -1,23 +1,26 @@
 ---
 const data = {
     type: 'i10', //i10, dio
-    image: '/public/tank/2023/12/13/99.jpg',
-    rotate: 1,
-    needle: 100, // percentage
+    image: '/public/tank/2023/12/15/81.jpg',
+    rotate:0,
+    horizontalOffset:2,
+    verticalOffset:7,
+    needle: 86.5, // percentage
     full: -42.8,
     threeq: -20.75,
     half: 1.25,
     quart: 23.25,
-    empty: 45,
+    empty: 46,
 }
+const horizontalOffset = data.horizontalOffset+"px";
+const verticalOffset = data.verticalOffset+"px";
+const full = data.full + "deg";
+const empty = data.empty + "deg";
 const range = [data.full, data.empty];
 const needlePos = data.needle;
 const rotateDeg = data.rotate + "deg";
-/* map needle position percentage to range */
-const scale = (value, [min, max]) => {
-    return (value - min) * 100 / (max - min);
-}
-const needleDeg = scale(data.needle, [data.full,data.empty]);
+/* map needle as percentage to range */
+const needleDeg = (needlePos * (range[0] - range[1]) / 100) + range[1] + "deg";
 ---
 {needleDeg}
 
@@ -94,7 +97,7 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
     </div>
 </div>
 
-<style define:vars={{rotateDeg}}>
+<style define:vars={{rotateDeg, needleDeg, horizontalOffset, verticalOffset,full,empty}}>
 .app {
     display:flex;
     flex-direction:row;
@@ -111,14 +114,15 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
     position:relative;
     background-size:cover;
     box-shadow: 0px 0px 20px 10px #000000 inset, 0px 0px 20px 10px #000000 inset;
+    /* background-position: 20% -10%; */
 }
 .gauge .guides {
     display:block;
     height:100%;
     width:100%;
     position:absolute;
-    top:0;
-    left:0;
+    top: var(--verticalOffset);
+    left: var(--horizontalOffset);
     transform-origin:center;
     transform: rotate(var(--rotateDeg));
 }
@@ -166,7 +170,7 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
     background: linear-gradient(90deg, #aaaaaa10,#aaaaaa10 365px,#aaaaaacc 380px,#aaaaaacc 100% );
     border:1px solid #ffffff50;
 }
-.e64 { transform:translate(0%,-50%) rotate(-42.8000deg) }
+.e64 { transform:translate(0%,-50%) rotate(var(--full)) }
 .e63 { transform:translate(0%,-50%) rotate(-41.3969deg) }
 .e62 { transform:translate(0%,-50%) rotate(-39.9938deg) }
 .e61 { transform:translate(0%,-50%) rotate(-38.5906deg) }
@@ -230,7 +234,7 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
 .e3 { transform:translate(0%,-50%) rotate(40.9219deg) }
 .e2 { transform:translate(0%,-50%) rotate(42.2813deg) }
 .e1 { transform:translate(0%,-50%) rotate(43.6406deg) }
-.e0 { transform:translate(0%,-50%) rotate(45.0000deg) }
+.e0 { transform:translate(0%,-50%) rotate(var(--empty)) }
 </style>
 <style>
 .i10 .guides span.overfill {
@@ -258,12 +262,14 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
     display:none;
 }
 .needle {
-    background:red;
-    height:1px;
+    background:linear-gradient(0deg, #FF000050,#ff000000 30%,#FF0000 50%,#FF0000 50%,#ff000000 70%,#FF000050 100% );
+    height:10px;
     width:100%;
-    transform:rotate(-42.8deg);
+    border:2px solid #ff770090;
     position:absolute;
     transform-origin:right;
+    transform: translate(0%, calc(-50% + 6px)) rotate(var(--needleDeg));
+    z-index: 100;
 }
 .needle::before{
     --diameter:72px;
@@ -277,6 +283,5 @@ const needleDeg = scale(data.needle, [data.full,data.empty]);
     position: absolute;
     top:calc(var(--diameter)/-2);
     left:calc(var(--diameter)/-2);
-    
 }
 </style>
