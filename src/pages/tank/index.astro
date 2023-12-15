@@ -15,6 +15,9 @@ const data = {
 const horizontalOffset = data.horizontalOffset+"px";
 const verticalOffset = data.verticalOffset+"px";
 const full = data.full + "deg";
+const threeq = data.threeq + "deg";
+const half = data.half + "deg";
+const quart = data.quart + "deg";
 const empty = data.empty + "deg";
 const range = [data.full, data.empty];
 const needlePos = data.needle;
@@ -97,7 +100,7 @@ const needleDeg = (needlePos * (range[0] - range[1]) / 100) + range[1] + "deg";
     </div>
 </div>
 
-<style define:vars={{rotateDeg, needleDeg, horizontalOffset, verticalOffset,full,empty}}>
+<style define:vars={{rotateDeg, needleDeg, horizontalOffset, verticalOffset,full,empty,threeq,half,quart}}>
 .app {
     display:flex;
     flex-direction:row;
@@ -186,7 +189,7 @@ const needleDeg = (needlePos * (range[0] - range[1]) / 100) + range[1] + "deg";
 .e51 { transform:translate(0%,-50%) rotate(-24.5594deg) }
 .e50 { transform:translate(0%,-50%) rotate(-23.1563deg) }
 .e49 { transform:translate(0%,-50%) rotate(-21.7531deg) }
-.e48 { transform:translate(0%,-50%) rotate(-20.3500deg) }
+.e48 { transform:translate(0%,-50%) rotate(var()) }
 .e47 { transform:translate(0%,-50%) rotate(-19.0000deg) }
 .e46 { transform:translate(0%,-50%) rotate(-17.6500deg) }
 .e45 { transform:translate(0%,-50%) rotate(-16.3000deg) }
