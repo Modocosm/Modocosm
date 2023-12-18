@@ -1,16 +1,16 @@
 ---
 const data = {
     type: 'i10', //i10, dio
-    image: '/public/tank/2023/12/15/81.jpg',
-    rotate: 0,
-    horizontalOffset:2,
-    verticalOffset:7,
-    needle: 86.5, // percentage
-    full: -42.8,
+    image: '/public/tank/2023/12/18/31.jpg',
+    rotate: -1,
+    horizontalOffset:9.5,
+    verticalOffset:4.5,
+    needle: 100, // percentage
+    full: -43,
     threeq: -20.75,
     half: 1.25,
     quart: 23.25,
-    empty: 46,
+    empty: 46.5,
 }
 const horizontalOffset = data.horizontalOffset+"px";
 const verticalOffset = data.verticalOffset+"px";
@@ -105,8 +105,10 @@ body {
     width:100%;
     border:2px solid #ff770090;
     position:absolute;
-    transform-origin:right;
-    transform: translate(0%, calc(-50% + 6px)) rotate(var(--needleDeg));
+    transform-origin:left;
+    top:50%;
+    left:50%;
+    transform: translate(calc(0% - 3px), calc(-50% + 3px)) rotate(var(--needleDeg));
     z-index: 100;
 }
 .needle::before{
