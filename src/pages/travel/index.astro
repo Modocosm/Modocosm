@@ -1,0 +1,67 @@
+---
+
+---
+<label for="odo">km (between 0.0 and 300):</label>
+<input id="odo" class="odo" type="number" min="0" max="300" placeholder="0" value="0" step="0.1"/>
+<div class="button_container">
+    <button class="plus biggest">+10</button>
+    <button class="plus bigger">+1</button>
+    <button class="plus base">+0.1</button>
+    <button class="minus biggest">-10</button>
+    <button class="minus bigger">-1</button>
+    <button class="minus base">-0.1</button>
+</div>
+<style>
+    body {
+        font-size:48px;
+    }
+    input {
+        font-size:48px;
+    }
+    label {
+        /* display: block; */
+        font-size:32px;
+    }
+    .button_container {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-gap:16px;
+    } 
+    .button_container button {
+        font-size:48px;
+        padding:16px 32px;
+        border-radius:3px;
+        box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.1);
+    }
+    .plus {
+        background: linear-gradient(45deg, #9dff00 0%, #61ff26 100%);
+    }
+    .minus, .bigMinus {
+        background: linear-gradient(45deg, #ff0000 0%, #ff5e5e 100%);
+        color:white;
+    }
+</style>
+
+<script lang="js">
+    var input = document.querySelector('input.km');
+    var bigPlus = document.querySelector('.bigPlus');
+    var plus = document.querySelector('.plus');
+    var minus = document.querySelector('.minus');
+    var bigMinus = document.querySelector('.bigMinus');
+
+    bigPlus.addEventListener('click', function() {
+        input.value = parseFloat(input.value) + 1.0;
+    });
+
+    plus.addEventListener('click', function() {
+        input.value = parseFloat(input.value) + 0.1;
+    });
+
+    minus.addEventListener('click', function() {
+        input.value = parseFloat(input.value) - 0.1;
+    });
+
+    bigMinus.addEventListener('click', function() {
+        input.value = parseFloat(input.value) - 1;
+    });
+</script>
