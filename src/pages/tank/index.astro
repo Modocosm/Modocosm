@@ -1,23 +1,17 @@
 ---
 const data = {
     type: 'i10', //i10, dio
-    image: '/public/tank/2023/12/21/2.jpg',
-    rotate: -0.5,
-    horizontalOffset: -3.5,
-    verticalOffset: -1.0,
-    needle: 102.0, // percentage
-    full: -43,
-    threeq: -20.75,
-    half: 1.25,
-    quart: 23.25,
-    empty: 46.2,
+    image: '/public/tank/2023/12/29/c/152.jpg',
+    rotate: 0.2,
+    horizontalOffset: 2.0,
+    verticalOffset: 3.0,
+    needle: 72.50, // percentage
+    full: -44,
+    empty: 45.50,
 }
 const horizontalOffset = data.horizontalOffset+"px";
 const verticalOffset = data.verticalOffset+"px";
 const full = data.full + "deg";
-const threeq = data.threeq + "deg";
-const half = data.half + "deg";
-const quart = data.quart + "deg";
 const empty = data.empty + "deg";
 const range = [data.full, data.empty];
 const needlePos = data.needle;
@@ -32,15 +26,12 @@ const needleDeg = (needlePos * (range[0] - range[1]) / 100) + range[1] + "deg";
         <div class="guides">
             <span class="needle"></span>
             <span class="a a4"><span>100.00%</span></span>
-            <span class="a a3"><span>75.00%</span></span>
-            <span class="a a2"><span>50.00%</span></span>
-            <span class="a a1"><span>25.00%</span></span>
             <span class="a a0"><span>0.00%</span></span>
         </div>
     </div>
 </div>
 
-<style define:vars={{rotateDeg, needleDeg, horizontalOffset, verticalOffset,full,empty,threeq,half,quart}}>
+<style define:vars={{rotateDeg, needleDeg, horizontalOffset, verticalOffset,full,empty}}>
 body {
     margin:0;
     padding:0;
@@ -95,21 +86,19 @@ body {
     border:1px solid #aaaaff;
 }
 .a4 { transform:translate(0%,-50%) rotate(var(--full)) }
-.a3 { transform:translate(0%,-50%) rotate(var(--threeq)) }
-.a2 { transform:translate(0%,-50%) rotate(var(--half)) }
-.a1 { transform:translate(0%,-50%) rotate(var(--quart)) }
 .a0 { transform:translate(0%,-50%) rotate(var(--empty)) }
 .needle {
-    background:linear-gradient(0deg, #FF000050,#ff000000 30%,#FF0000 50%,#FF0000 50%,#ff000000 70%,#FF000050 100% );
+    background:linear-gradient(0deg, #FF000050,#ff000000 30%,#FF000090 50%,#FF000090 50%,#ff000000 70%,#FF000050 100% );
     height:10px;
     width:100%;
-    border:2px solid #ff770090;
+    border:2px solid #ff770050;
     position:absolute;
     transform-origin:left;
     top:50%;
     left:50%;
     transform: translate(calc(0% - 3px), calc(-50% + 3px)) rotate(var(--needleDeg));
     z-index: 100;
+    mix-blend-mode: lighten;
 }
 .needle::before{
     --diameter:72px;
